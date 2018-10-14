@@ -3,13 +3,13 @@ Public Class Form1
 
     Private Sub DataStokToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormStok.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 
     Private Sub TambahDataStokToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormTambahJenis.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 
@@ -27,43 +27,51 @@ Public Class Form1
 
     Private Sub TambahStokToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormTambahStok.Show()
-        Me.Close()
+        Me.Hide()
 
     End Sub
 
-    Private Sub PenjualanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PenjualanToolStripMenuItem.Click
-        FormPEnjualan.Show()
-        Me.Close()
-    End Sub
+    
 
-    Private Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DetailTransaksiToolStripMenuItem.Click
+    Private Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormDetailTransaksi.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub LaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanToolStripMenuItem.Click
         Laporan.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub KategoriToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KategoriToolStripMenuItem.Click
         FormKategori.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub MerekToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MerekToolStripMenuItem.Click
         FormMerek.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
     Private Sub StokToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StokToolStripMenuItem.Click
         FormStok.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 
-    Private Sub DiskonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DiskonToolStripMenuItem.Click
-        FormDiskon.Show()
-        Me.Close()
+    Private Sub TransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransaksiToolStripMenuItem.Click
+        FormPEnjualan.Show()
+        Me.Hide()
+
     End Sub
 
+    Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
+    End Sub
 End Class

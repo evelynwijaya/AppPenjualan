@@ -78,4 +78,10 @@ Public Class FormTambahJenis
         Me.Close()
         FormStok.Show()
     End Sub
+
+    Private Sub tbharga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbharga.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

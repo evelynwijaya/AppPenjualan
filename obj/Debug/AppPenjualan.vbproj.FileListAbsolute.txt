@@ -47,5 +47,3 @@ C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjual
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.exe
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.xml
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.pdb
-C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormDiskon.resources
-C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormTambahDiskon.resources

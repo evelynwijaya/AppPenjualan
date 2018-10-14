@@ -71,4 +71,10 @@ Public Class FormTambahStok
     Private Sub tbserach_TextChanged(sender As Object, e As EventArgs) Handles tbserach.TextChanged
         seleksi()
     End Sub
+
+    Private Sub tbjumlah_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbjumlah.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

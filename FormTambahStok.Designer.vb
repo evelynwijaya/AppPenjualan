@@ -24,18 +24,18 @@ Partial Class FormTambahStok
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTambahStok))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.tbjumlah = New System.Windows.Forms.TextBox()
+        Me.btupdate = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbkodestok = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbserach = New System.Windows.Forms.TextBox()
         Me.btrefresh = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbkodestok = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.btupdate = New System.Windows.Forms.Button()
-        Me.tbjumlah = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -57,6 +57,86 @@ Partial Class FormTambahStok
         Me.GroupBox1.Size = New System.Drawing.Size(332, 266)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Chocolate
+        Me.Button1.Location = New System.Drawing.Point(233, 203)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(78, 26)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "TUTUP"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(138, 157)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(173, 20)
+        Me.DateTimePicker1.TabIndex = 13
+        '
+        'tbjumlah
+        '
+        Me.tbjumlah.Location = New System.Drawing.Point(138, 119)
+        Me.tbjumlah.Name = "tbjumlah"
+        Me.tbjumlah.Size = New System.Drawing.Size(173, 20)
+        Me.tbjumlah.TabIndex = 12
+        '
+        'btupdate
+        '
+        Me.btupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btupdate.ForeColor = System.Drawing.Color.Chocolate
+        Me.btupdate.Location = New System.Drawing.Point(138, 203)
+        Me.btupdate.Name = "btupdate"
+        Me.btupdate.Size = New System.Drawing.Size(78, 26)
+        Me.btupdate.TabIndex = 10
+        Me.btupdate.Text = "SIMPAN"
+        Me.btupdate.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Sienna
+        Me.Label4.Location = New System.Drawing.Point(25, 157)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(79, 20)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Tgl Masuk"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Sienna
+        Me.Label2.Location = New System.Drawing.Point(25, 119)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(107, 20)
+        Me.Label2.TabIndex = 5
+        Me.Label2.Text = "Jumlah Masuk"
+        '
+        'lbkodestok
+        '
+        Me.lbkodestok.AutoSize = True
+        Me.lbkodestok.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbkodestok.ForeColor = System.Drawing.Color.Sienna
+        Me.lbkodestok.Location = New System.Drawing.Point(25, 80)
+        Me.lbkodestok.Name = "lbkodestok"
+        Me.lbkodestok.Size = New System.Drawing.Size(78, 20)
+        Me.lbkodestok.TabIndex = 4
+        Me.lbkodestok.Text = "Kode Stok"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft NeoGothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Chocolate
+        Me.Label1.Location = New System.Drawing.Point(110, 21)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(144, 28)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "DATA MASUK"
         '
         'Label3
         '
@@ -92,86 +172,6 @@ Partial Class FormTambahStok
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(375, 219)
         Me.DataGridView1.TabIndex = 9
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft NeoGothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label1.Location = New System.Drawing.Point(110, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 28)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "DATA MASUK"
-        '
-        'lbkodestok
-        '
-        Me.lbkodestok.AutoSize = True
-        Me.lbkodestok.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbkodestok.ForeColor = System.Drawing.Color.Sienna
-        Me.lbkodestok.Location = New System.Drawing.Point(25, 80)
-        Me.lbkodestok.Name = "lbkodestok"
-        Me.lbkodestok.Size = New System.Drawing.Size(78, 20)
-        Me.lbkodestok.TabIndex = 4
-        Me.lbkodestok.Text = "Kode Stok"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Sienna
-        Me.Label2.Location = New System.Drawing.Point(25, 119)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 20)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Jumlah Masuk"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Sienna
-        Me.Label4.Location = New System.Drawing.Point(25, 157)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 20)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Tgl Masuk"
-        '
-        'btupdate
-        '
-        Me.btupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btupdate.ForeColor = System.Drawing.Color.Chocolate
-        Me.btupdate.Location = New System.Drawing.Point(138, 203)
-        Me.btupdate.Name = "btupdate"
-        Me.btupdate.Size = New System.Drawing.Size(78, 26)
-        Me.btupdate.TabIndex = 10
-        Me.btupdate.Text = "SIMPAN"
-        Me.btupdate.UseVisualStyleBackColor = True
-        '
-        'tbjumlah
-        '
-        Me.tbjumlah.Location = New System.Drawing.Point(138, 119)
-        Me.tbjumlah.Name = "tbjumlah"
-        Me.tbjumlah.Size = New System.Drawing.Size(173, 20)
-        Me.tbjumlah.TabIndex = 12
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(138, 157)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(173, 20)
-        Me.DateTimePicker1.TabIndex = 13
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Chocolate
-        Me.Button1.Location = New System.Drawing.Point(233, 203)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 26)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "TUTUP"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'FormTambahStok
         '

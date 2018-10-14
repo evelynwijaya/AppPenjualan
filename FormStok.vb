@@ -87,4 +87,10 @@ Public Class FormStok
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
         FormTambahStok.Show()
     End Sub
+
+    Private Sub tbharga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbharga.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

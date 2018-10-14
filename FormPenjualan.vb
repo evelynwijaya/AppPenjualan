@@ -60,15 +60,6 @@ Public Class FormPEnjualan
         lbidtransaksi.Text = "T" & Microsoft.VisualBasic.Right("0000" & no, 4)
     End Sub
 
-    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-
-        If DataGridView2.CurrentCell.Value Is Nothing Then
-            Me.Close()
-            Form1.Show()
-        Else
-            MsgBox("Transaksi Belum Selesai!!", vbCritical, "Warning!")
-        End If
-    End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         lbkodebaju.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value()
@@ -337,4 +328,38 @@ Public Class FormPEnjualan
     End Sub
 
 
+    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+
+        If DataGridView2.RowCount <= 1 Then
+            Me.Close()
+            Form1.Show()
+
+        ElseIf MsgBox("Transaksi belum selesai! Apakah anda yakin ingin keluar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
+            Dim kodebaju As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(1).Value()
+            Dim idtransaksi As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(0).Value()
+            Dim Jumlah2 As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value()
+            Dim Jumlah1 As Integer = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
+            Dim kembali As Integer = Jumlah1 + Jumlah2
+
+            Dim i As Integer
+            For i = 0 To DataGridView2.RowCount - 2
+                lbkodebaju.Text = DataGridView2.Item(1, i).Value
+                Jumlah2 = DataGridView2.Item(3, i).Value
+                Jumlah1 = DataGridView1.Item(3, i).Value
+                kembali = Jumlah1 + Jumlah2
+                Dim strupdate As String = "Update tb_stok set stok = '" & kembali & "' where kode_baju = '" & lbkodebaju.Text & "'"
+                Call editdata(strupdate)
+            Next
+            Dim strhapus As String = "Delete from tb_sementara"
+            Call hapusdata(strhapus)
+            Me.Close()
+            Form1.Show()
+        End If
+    End Sub
+
+    Private Sub tbjumlah_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbjumlah.KeyPress
+        If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

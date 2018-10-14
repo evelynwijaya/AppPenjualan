@@ -306,6 +306,7 @@ Partial Class FormPEnjualan
         '
         Me.tbkembalian.Location = New System.Drawing.Point(121, 385)
         Me.tbkembalian.Name = "tbkembalian"
+        Me.tbkembalian.ReadOnly = True
         Me.tbkembalian.Size = New System.Drawing.Size(155, 20)
         Me.tbkembalian.TabIndex = 16
         '

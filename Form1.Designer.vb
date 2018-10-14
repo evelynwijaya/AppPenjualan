@@ -33,10 +33,7 @@ Partial Class Form1
         Me.StokToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MerekToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KategoriToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DiskonToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetailTransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -68,7 +65,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.DetailTransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DataToolStripMenuItem, Me.TransaksiToolStripMenuItem, Me.LaporanToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(734, 24)
@@ -77,7 +74,7 @@ Partial Class Form1
         '
         'DataToolStripMenuItem
         '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StokToolStripMenuItem, Me.MerekToolStripMenuItem, Me.KategoriToolStripMenuItem, Me.DiskonToolStripMenuItem})
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.StokToolStripMenuItem, Me.MerekToolStripMenuItem, Me.KategoriToolStripMenuItem})
         Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
         Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
         Me.DataToolStripMenuItem.Text = "Data"
@@ -100,30 +97,11 @@ Partial Class Form1
         Me.KategoriToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.KategoriToolStripMenuItem.Text = "Kategori"
         '
-        'DiskonToolStripMenuItem
-        '
-        Me.DiskonToolStripMenuItem.Name = "DiskonToolStripMenuItem"
-        Me.DiskonToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
-        Me.DiskonToolStripMenuItem.Text = "Diskon"
-        '
         'TransaksiToolStripMenuItem
         '
-        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PenjualanToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.TransaksiToolStripMenuItem.Text = "Transaksi"
-        '
-        'PenjualanToolStripMenuItem
-        '
-        Me.PenjualanToolStripMenuItem.Name = "PenjualanToolStripMenuItem"
-        Me.PenjualanToolStripMenuItem.Size = New System.Drawing.Size(126, 22)
-        Me.PenjualanToolStripMenuItem.Text = "Penjualan"
-        '
-        'DetailTransaksiToolStripMenuItem
-        '
-        Me.DetailTransaksiToolStripMenuItem.Name = "DetailTransaksiToolStripMenuItem"
-        Me.DetailTransaksiToolStripMenuItem.Size = New System.Drawing.Size(100, 20)
-        Me.DetailTransaksiToolStripMenuItem.Text = "Detail Transaksi"
+        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(122, 20)
+        Me.TransaksiToolStripMenuItem.Text = "Transaksi Penjualan"
         '
         'LaporanToolStripMenuItem
         '
@@ -158,10 +136,7 @@ Partial Class Form1
     Friend WithEvents MerekToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents KategoriToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents DetailTransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DiskonToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
