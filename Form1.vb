@@ -1,4 +1,5 @@
-﻿Public Class Form1
+﻿
+Public Class Form1
 
     Private Sub DataStokToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormStok.Show()
@@ -64,4 +65,5 @@
         FormDiskon.Show()
         Me.Close()
     End Sub
+
 End Class

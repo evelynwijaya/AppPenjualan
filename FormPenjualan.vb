@@ -6,7 +6,11 @@ Public Class FormPEnjualan
         isigridjenis()
         isigridsementara()
         autokode()
-        isidiskon()
+        Combodiskon.Items.Clear()
+        Combodiskon.Items.Add("5")
+        Combodiskon.Items.Add("10")
+        Combodiskon.Items.Add("15")
+        Combodiskon.Items.Add("20")
     End Sub
 
     Sub isigridjenis()
@@ -25,20 +29,6 @@ Public Class FormPEnjualan
         DataGridView2.ReadOnly = True
     End Sub
 
-    Sub isidiskon()
-        Dim sql As String = "Select * from tb_diskon Order by kode_diskon"
-        Call KonekDB()
-        da = New Data.Odbc.OdbcDataAdapter(sql, conn)
-        Dim dt As New DataTable
-        Try
-            da.Fill(dt)
-            Combodiskon.DataSource = dt
-            Combodiskon.ValueMember = "kode_diskon"
-            Combodiskon.DisplayMember = "diskon"
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        End Try
-    End Sub
     Sub seleksi()
         Dim strtext As String = "Select * from tb_stok where nama_baju like '%" & tbsearch.Text & "%' or harga like '%" & tbsearch.Text & "%' or kode_baju like '%" & tbsearch.Text & "%'"
         Using cmd2 As New MySqlCommand(strtext, konek)
@@ -71,8 +61,13 @@ Public Class FormPEnjualan
     End Sub
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        Me.Close()
-        Form1.Show()
+
+        If DataGridView2.CurrentCell.Value Is Nothing Then
+            Me.Close()
+            Form1.Show()
+        Else
+            MsgBox("Transaksi Belum Selesai!!", vbCritical, "Warning!")
+        End If
     End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
@@ -131,6 +126,7 @@ Public Class FormPEnjualan
                 If CheckBox1.Checked = True Then
                     totaldiskon = totalbayar - (totalbayar * (diskon / 100))
                     tbtotal.Text = totaldiskon
+                    lbdiscount.Text = totalbayar * (diskon / 100)
                 Else
                     tbtotal.Text = totalbayar
                 End If
@@ -149,6 +145,9 @@ Public Class FormPEnjualan
                                               & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & total & "')"
                     Call simpandata(strsimpan)
 
+                    Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
+                    Call editdata(strupdate2)
+
                     isigridjenis()
                     isigridsementara()
                     lbkodebaju.Text = ""
@@ -162,10 +161,11 @@ Public Class FormPEnjualan
                     For i As Integer = 0 To DataGridView2.RowCount - 1
                         totalbayar += DataGridView2.Rows(i).Cells(5).Value
                     Next
-                    diskon = Combodiskon.Text
+                    diskon = Val(Combodiskon.Text)
                     If CheckBox1.Checked = True Then
                         totaldiskon = totalbayar - (totalbayar * (diskon / 100))
                         tbtotal.Text = totaldiskon
+                        lbdiscount.Text = totalbayar * (diskon / 100)
                     Else
                         tbtotal.Text = totalbayar
                     End If
@@ -181,6 +181,8 @@ Public Class FormPEnjualan
             totalbayar += DataGridView2.Rows(i).Cells(5).Value
         Next
         diskon = Val(Combodiskon.Text)
+
+        lbdiscount.Text = totalbayar * (diskon / 100)
         totalbayar = totalbayar - (totalbayar * (diskon / 100))
         tbtotal.Text = totalbayar
     End Sub
@@ -199,65 +201,19 @@ Public Class FormPEnjualan
 
         isigridsementara()
         isigridjenis()
+
+        Dim totalbayar As String = 0
+        Dim diskon As Double
+        For i As Integer = 0 To DataGridView2.RowCount - 1
+            totalbayar += DataGridView2.Rows(i).Cells(5).Value
+        Next
+        diskon = Val(Combodiskon.Text)
+
+        lbdiscount.Text = totalbayar * (diskon / 100)
+        totalbayar = totalbayar - (totalbayar * (diskon / 100))
+        tbtotal.Text = totalbayar
+
     End Sub
-
-
-    'Private Sub bthapus_Click(sender As Object, e As EventArgs)
-    '    'Dim hapus As Double
-    '    Call KonekDB()
-    '    cmd = New Odbc.OdbcCommand
-    '    cmd.CommandType = CommandType.Text
-    '    cmd.Connection = conn
-    '    str = "Select * From tb_sementara where id_transaksi = '" & lbidtransaksi.Text & "'"
-    '    cmd.CommandText = str
-    '    dr = cmd.ExecuteReader()
-    '    If dr.HasRows Then
-    '        Dim kodebaju As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(1).Value()
-    '        Dim harga As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(4).Value()
-    '        Dim jumlah As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value()
-    '        'lbharga.Text = harga
-    '        lbkodebaju.Text = kodebaju
-    '        'tbjumlah.Text = jumlah
-    '        'hapus = Val(tbhapus.Text)
-    '        If jumlah > 1 Then
-    '            FormHapus.Show()
-
-    '            Dim totalbayar As String = 0
-    '            Dim diskon As Double
-    '            For i As Integer = 0 To DataGridView2.RowCount - 1
-    '                totalbayar += DataGridView2.Rows(i).Cells(5).Value
-    '            Next
-    '            diskon = Val(Combodiskon.Text)
-    '            totalbayar = totalbayar - (totalbayar * (diskon / 100))
-    '            tbtotal.Text = totalbayar
-
-    '        ElseIf jumlah = 1 Then
-    '            Dim kurang As Integer = jumlah - 1
-    '            Dim stokawal As Integer = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
-    '            Dim stokkembali As Integer = stokawal + 1
-    '            Dim strupdate As String = "Update tb_stok set stok = '" & stokkembali & "' Where kode_baju = '" & kodebaju & "'"
-    '            Call editdata(strupdate)
-    '            Dim strdelete As String = "DELETE from tb_sementara WHERE kode_baju = '" & lbidbaju.Text & "' and id_transaksi = '" & lbidtransaksi.Text & "'"
-    '            Call hapusdata(strdelete)
-    '            isigridjenis()
-    '            isigridsementara()
-
-    '            Dim totalbayar As String = 0
-    '            Dim diskon As Double
-    '            Dim totaldiskon As Double
-    '            For i As Integer = 0 To DataGridView2.RowCount - 1
-    '                totalbayar += DataGridView2.Rows(i).Cells(5).Value
-    '            Next
-    '            diskon = Combodiskon.Text
-    '            If CheckBox1.Checked = True Then
-    '                totaldiskon = totalbayar - (totalbayar * (diskon / 100))
-    '                tbtotal.Text = totaldiskon
-    '            Else
-    '                tbtotal.Text = totalbayar
-    '            End If
-    '        End If
-    '    End If
-    'End Sub
 
     Private Sub btsimpan_Click(sender As Object, e As EventArgs) Handles btsimpan.Click
         lbtemp.Text = lbidtransaksi.Text
@@ -269,6 +225,7 @@ Public Class FormPEnjualan
                                        & "Value ('" & lbidtransaksi.Text & "','" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "')"
             Call simpandata(strsimpan1)
 
+
             Dim i As Integer
             For i = 0 To DataGridView2.RowCount - 2
                 lbidtransaksi.Text = DataGridView2.Item(0, i).Value
@@ -277,8 +234,8 @@ Public Class FormPEnjualan
                 tbjumlah.Text = DataGridView2.Item(3, i).Value
                 lbharga.Text = DataGridView2.Item(4, i).Value
 
-                Dim strsimpan2 As String = "Insert into tb_detail ( id_transaksi , kode_baju , nama_baju , jumlah , harga ) " _
-                                           & "Value ('" & lbidtransaksi.Text & "','" & lbkodebaju.Text & "','" & lbnamabaju.Text & "','" & tbjumlah.Text & "','" & lbharga.Text & "')"
+                Dim strsimpan2 As String = "Insert into tb_detail ( id_transaksi , kode_baju , nama_baju , jumlah , harga , diskon) " _
+                                           & "Value ('" & lbidtransaksi.Text & "','" & lbkodebaju.Text & "','" & lbnamabaju.Text & "','" & tbjumlah.Text & "','" & lbharga.Text & "','" & Combodiskon.Text & "')"
                 Call simpandata(strsimpan2)
 
             Next
@@ -301,6 +258,7 @@ Public Class FormPEnjualan
                 report.SetParameterValue("totalbayar", tbtotal.Text)
                 report.SetParameterValue("bayar", tbbayar.Text)
                 report.SetParameterValue("kembalian", tbkembalian.Text)
+                report.SetParameterValue("diskon", lbdiscount.Text)
                 LaporanCrystalReport.CrystalReportViewer1.ReportSource = report
                 LaporanCrystalReport.CrystalReportViewer1.Refresh()
             End If
@@ -367,17 +325,16 @@ Public Class FormPEnjualan
             For i As Integer = 0 To DataGridView2.RowCount - 1
                 totalbayar += DataGridView2.Rows(i).Cells(5).Value
             Next
-            diskon = Combodiskon.Text
+            diskon = Val(Combodiskon.Text)
             If CheckBox1.Checked = True Then
                 totaldiskon = totalbayar - (totalbayar * (diskon / 100))
                 tbtotal.Text = totaldiskon
+                lbdiscount.Text = totaldiskon
             Else
                 tbtotal.Text = totalbayar
             End If
         End If
     End Sub
 
-    Private Sub btnselesai_Click(sender As Object, e As EventArgs) Handles btnselesai.Click
-        
-    End Sub
+
 End Class

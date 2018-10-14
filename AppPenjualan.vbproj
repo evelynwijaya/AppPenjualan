@@ -153,6 +153,7 @@
     <Compile Include="FormTambahStok.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="KeyArgs.vb" />
     <Compile Include="KoneksiDB.vb" />
     <Compile Include="Laporan.Designer.vb">
       <DependentUpon>Laporan.vb</DependentUpon>

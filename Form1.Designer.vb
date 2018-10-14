@@ -85,25 +85,25 @@ Partial Class Form1
         'StokToolStripMenuItem
         '
         Me.StokToolStripMenuItem.Name = "StokToolStripMenuItem"
-        Me.StokToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.StokToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.StokToolStripMenuItem.Text = "Stok"
         '
         'MerekToolStripMenuItem
         '
         Me.MerekToolStripMenuItem.Name = "MerekToolStripMenuItem"
-        Me.MerekToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.MerekToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.MerekToolStripMenuItem.Text = "Merek"
         '
         'KategoriToolStripMenuItem
         '
         Me.KategoriToolStripMenuItem.Name = "KategoriToolStripMenuItem"
-        Me.KategoriToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.KategoriToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.KategoriToolStripMenuItem.Text = "Kategori"
         '
         'DiskonToolStripMenuItem
         '
         Me.DiskonToolStripMenuItem.Name = "DiskonToolStripMenuItem"
-        Me.DiskonToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DiskonToolStripMenuItem.Size = New System.Drawing.Size(118, 22)
         Me.DiskonToolStripMenuItem.Text = "Diskon"
         '
         'TransaksiToolStripMenuItem

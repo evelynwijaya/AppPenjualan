@@ -38,7 +38,10 @@ Partial Class FormPEnjualan
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.lbdiscount = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.lbidbaju = New System.Windows.Forms.Label()
         Me.btsimpan = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.tbkembalian = New System.Windows.Forms.TextBox()
@@ -53,11 +56,9 @@ Partial Class FormPEnjualan
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbtotal = New System.Windows.Forms.TextBox()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
+        Me.lbtemp = New System.Windows.Forms.Label()
         Me.bttutup = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.lbidbaju = New System.Windows.Forms.Label()
-        Me.btnselesai = New System.Windows.Forms.Button()
-        Me.lbtemp = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -218,7 +219,8 @@ Partial Class FormPEnjualan
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox2.Controls.Add(Me.lbtemp)
+        Me.GroupBox2.Controls.Add(Me.Label13)
+        Me.GroupBox2.Controls.Add(Me.lbdiscount)
         Me.GroupBox2.Controls.Add(Me.CheckBox1)
         Me.GroupBox2.Controls.Add(Me.lbidbaju)
         Me.GroupBox2.Controls.Add(Me.btsimpan)
@@ -241,6 +243,24 @@ Partial Class FormPEnjualan
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(190, 333)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(24, 13)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "Rp."
+        '
+        'lbdiscount
+        '
+        Me.lbdiscount.AutoSize = True
+        Me.lbdiscount.Location = New System.Drawing.Point(214, 333)
+        Me.lbdiscount.Name = "lbdiscount"
+        Me.lbdiscount.Size = New System.Drawing.Size(49, 13)
+        Me.lbdiscount.TabIndex = 21
+        Me.lbdiscount.Text = "Discount"
+        '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
@@ -249,6 +269,16 @@ Partial Class FormPEnjualan
         Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox1.TabIndex = 20
         Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'lbidbaju
+        '
+        Me.lbidbaju.AutoSize = True
+        Me.lbidbaju.Location = New System.Drawing.Point(302, 3)
+        Me.lbidbaju.Name = "lbidbaju"
+        Me.lbidbaju.Size = New System.Drawing.Size(45, 13)
+        Me.lbidbaju.TabIndex = 19
+        Me.lbidbaju.Text = "Label13"
+        Me.lbidbaju.Visible = False
         '
         'btsimpan
         '
@@ -388,11 +418,21 @@ Partial Class FormPEnjualan
         Me.DataGridView2.Size = New System.Drawing.Size(352, 190)
         Me.DataGridView2.TabIndex = 1
         '
+        'lbtemp
+        '
+        Me.lbtemp.AutoSize = True
+        Me.lbtemp.Location = New System.Drawing.Point(584, 452)
+        Me.lbtemp.Name = "lbtemp"
+        Me.lbtemp.Size = New System.Drawing.Size(38, 13)
+        Me.lbtemp.TabIndex = 21
+        Me.lbtemp.Text = "lbtemp"
+        Me.lbtemp.Visible = False
+        '
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bttutup.ForeColor = System.Drawing.Color.Chocolate
-        Me.bttutup.Location = New System.Drawing.Point(14, 452)
+        Me.bttutup.Location = New System.Drawing.Point(671, 452)
         Me.bttutup.Name = "bttutup"
         Me.bttutup.Size = New System.Drawing.Size(75, 23)
         Me.bttutup.TabIndex = 4
@@ -410,43 +450,13 @@ Partial Class FormPEnjualan
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "TRANSAKSI"
         '
-        'lbidbaju
-        '
-        Me.lbidbaju.AutoSize = True
-        Me.lbidbaju.Location = New System.Drawing.Point(302, 3)
-        Me.lbidbaju.Name = "lbidbaju"
-        Me.lbidbaju.Size = New System.Drawing.Size(45, 13)
-        Me.lbidbaju.TabIndex = 19
-        Me.lbidbaju.Text = "Label13"
-        Me.lbidbaju.Visible = False
-        '
-        'btnselesai
-        '
-        Me.btnselesai.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnselesai.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnselesai.Location = New System.Drawing.Point(671, 452)
-        Me.btnselesai.Name = "btnselesai"
-        Me.btnselesai.Size = New System.Drawing.Size(75, 23)
-        Me.btnselesai.TabIndex = 14
-        Me.btnselesai.Text = "Selesai"
-        Me.btnselesai.UseVisualStyleBackColor = True
-        '
-        'lbtemp
-        '
-        Me.lbtemp.AutoSize = True
-        Me.lbtemp.Location = New System.Drawing.Point(242, 280)
-        Me.lbtemp.Name = "lbtemp"
-        Me.lbtemp.Size = New System.Drawing.Size(38, 13)
-        Me.lbtemp.TabIndex = 21
-        Me.lbtemp.Text = "lbtemp"
-        '
         'FormPEnjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.ClientSize = New System.Drawing.Size(758, 478)
-        Me.Controls.Add(Me.btnselesai)
+        Me.Controls.Add(Me.lbtemp)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
@@ -496,6 +506,7 @@ Partial Class FormPEnjualan
     Friend WithEvents tbtotal As System.Windows.Forms.TextBox
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents lbidbaju As System.Windows.Forms.Label
-    Friend WithEvents btnselesai As System.Windows.Forms.Button
     Friend WithEvents lbtemp As System.Windows.Forms.Label
+    Friend WithEvents lbdiscount As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

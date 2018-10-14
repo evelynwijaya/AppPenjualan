@@ -76,6 +76,6 @@ Public Class FormTambahJenis
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
         Me.Close()
-        Form1.Show()
+        FormStok.Show()
     End Sub
 End Class
