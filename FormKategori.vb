@@ -80,4 +80,16 @@ Public Class FormKategori
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         FormTambahKategori.Show()
     End Sub
+
+    Private Sub tbsearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbsearch.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub tbnamakategori_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamakategori.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

@@ -77,4 +77,10 @@ Public Class FormTambahStok
             e.Handled = True
         End If
     End Sub
+
+    Private Sub tbserach_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbserach.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

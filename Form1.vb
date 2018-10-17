@@ -33,11 +33,6 @@ Public Class Form1
 
     
 
-    Private Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        FormDetailTransaksi.Show()
-        Me.Hide()
-    End Sub
-
     Private Sub LaporanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaporanToolStripMenuItem.Click
         Laporan.Show()
         Me.Hide()

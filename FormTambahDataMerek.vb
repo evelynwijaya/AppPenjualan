@@ -39,4 +39,10 @@ Public Class FormTambahDataMerek
         Me.Close()
         Form1.Show()
     End Sub
+
+    Private Sub tbnamamerek_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamamerek.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class

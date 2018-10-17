@@ -87,12 +87,6 @@
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDetailTransaksi.Designer.vb">
-      <DependentUpon>FormDetailTransaksi.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormDetailTransaksi.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormKategori.Designer.vb">
       <DependentUpon>FormKategori.vb</DependentUpon>
     </Compile>
@@ -141,7 +135,6 @@
     <Compile Include="FormTambahStok.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="KeyArgs.vb" />
     <Compile Include="KoneksiDB.vb" />
     <Compile Include="Laporan.Designer.vb">
       <DependentUpon>Laporan.vb</DependentUpon>
@@ -204,9 +197,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormDetailTransaksi.resx">
-      <DependentUpon>FormDetailTransaksi.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKategori.resx">
       <DependentUpon>FormKategori.vb</DependentUpon>

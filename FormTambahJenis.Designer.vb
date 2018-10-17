@@ -112,6 +112,7 @@ Partial Class FormTambahJenis
         '
         Me.tbkodebaju.Location = New System.Drawing.Point(146, 61)
         Me.tbkodebaju.Name = "tbkodebaju"
+        Me.tbkodebaju.ReadOnly = True
         Me.tbkodebaju.Size = New System.Drawing.Size(172, 20)
         Me.tbkodebaju.TabIndex = 24
         '

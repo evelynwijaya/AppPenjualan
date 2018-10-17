@@ -50,7 +50,6 @@ Public Class FormMerek
 
     Private Sub tbcari_TextChanged(sender As Object, e As EventArgs) Handles tbcari.TextChanged
         seleksi()
-
     End Sub
 
 
@@ -100,5 +99,11 @@ Public Class FormMerek
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         FormTambahDataMerek.Show()
+    End Sub
+
+    Private Sub tbcari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbcari.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+            e.Handled = True
+        End If
     End Sub
 End Class
