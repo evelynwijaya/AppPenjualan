@@ -24,6 +24,7 @@ Partial Class FormPEnjualan
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPEnjualan))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.btnext = New System.Windows.Forms.Button()
         Me.tbjumlah = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -38,6 +39,7 @@ Partial Class FormPEnjualan
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lbdiscount = New System.Windows.Forms.Label()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
@@ -68,6 +70,7 @@ Partial Class FormPEnjualan
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.btnext)
         Me.GroupBox1.Controls.Add(Me.tbjumlah)
         Me.GroupBox1.Controls.Add(Me.Label8)
@@ -83,15 +86,26 @@ Partial Class FormPEnjualan
         Me.GroupBox1.Controls.Add(Me.DataGridView1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(364, 434)
+        Me.GroupBox1.Size = New System.Drawing.Size(364, 453)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Maroon
+        Me.Label14.Location = New System.Drawing.Point(6, 259)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(338, 14)
+        Me.Label14.TabIndex = 13
+        Me.Label14.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
         '
         'btnext
         '
         Me.btnext.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnext.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnext.Location = New System.Drawing.Point(274, 395)
+        Me.btnext.Location = New System.Drawing.Point(265, 423)
         Me.btnext.Name = "btnext"
         Me.btnext.Size = New System.Drawing.Size(75, 23)
         Me.btnext.TabIndex = 12
@@ -100,7 +114,7 @@ Partial Class FormPEnjualan
         '
         'tbjumlah
         '
-        Me.tbjumlah.Location = New System.Drawing.Point(95, 359)
+        Me.tbjumlah.Location = New System.Drawing.Point(86, 387)
         Me.tbjumlah.Name = "tbjumlah"
         Me.tbjumlah.Size = New System.Drawing.Size(100, 20)
         Me.tbjumlah.TabIndex = 11
@@ -110,7 +124,7 @@ Partial Class FormPEnjualan
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label8.Location = New System.Drawing.Point(15, 361)
+        Me.Label8.Location = New System.Drawing.Point(6, 389)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(62, 15)
         Me.Label8.TabIndex = 10
@@ -121,17 +135,18 @@ Partial Class FormPEnjualan
         Me.lbharga.AutoSize = True
         Me.lbharga.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbharga.ForeColor = System.Drawing.Color.Chocolate
-        Me.lbharga.Location = New System.Drawing.Point(100, 329)
+        Me.lbharga.Location = New System.Drawing.Point(97, 357)
         Me.lbharga.Name = "lbharga"
-        Me.lbharga.Size = New System.Drawing.Size(0, 15)
+        Me.lbharga.Size = New System.Drawing.Size(81, 15)
         Me.lbharga.TabIndex = 9
+        Me.lbharga.Text = "lbhargabaju"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label6.Location = New System.Drawing.Point(15, 329)
+        Me.Label6.Location = New System.Drawing.Point(6, 357)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(60, 15)
         Me.Label6.TabIndex = 8
@@ -142,17 +157,18 @@ Partial Class FormPEnjualan
         Me.lbnamabaju.AutoSize = True
         Me.lbnamabaju.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbnamabaju.ForeColor = System.Drawing.Color.Chocolate
-        Me.lbnamabaju.Location = New System.Drawing.Point(102, 299)
+        Me.lbnamabaju.Location = New System.Drawing.Point(100, 329)
         Me.lbnamabaju.Name = "lbnamabaju"
-        Me.lbnamabaju.Size = New System.Drawing.Size(0, 15)
+        Me.lbnamabaju.Size = New System.Drawing.Size(69, 15)
         Me.lbnamabaju.TabIndex = 7
+        Me.lbnamabaju.Text = "Namabaju"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label4.Location = New System.Drawing.Point(15, 299)
+        Me.Label4.Location = New System.Drawing.Point(3, 329)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 15)
         Me.Label4.TabIndex = 6
@@ -163,17 +179,18 @@ Partial Class FormPEnjualan
         Me.lbkodebaju.AutoSize = True
         Me.lbkodebaju.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbkodebaju.ForeColor = System.Drawing.Color.Chocolate
-        Me.lbkodebaju.Location = New System.Drawing.Point(96, 271)
+        Me.lbkodebaju.Location = New System.Drawing.Point(97, 299)
         Me.lbkodebaju.Name = "lbkodebaju"
-        Me.lbkodebaju.Size = New System.Drawing.Size(0, 15)
+        Me.lbkodebaju.Size = New System.Drawing.Size(74, 15)
         Me.lbkodebaju.TabIndex = 5
+        Me.lbkodebaju.Text = "lbkodebaju"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label2.Location = New System.Drawing.Point(15, 271)
+        Me.Label2.Location = New System.Drawing.Point(6, 299)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(82, 15)
         Me.Label2.TabIndex = 4
@@ -219,6 +236,7 @@ Partial Class FormPEnjualan
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.GroupBox2.Controls.Add(Me.Label15)
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.lbdiscount)
         Me.GroupBox2.Controls.Add(Me.CheckBox1)
@@ -242,6 +260,17 @@ Partial Class FormPEnjualan
         Me.GroupBox2.Size = New System.Drawing.Size(364, 434)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Maroon
+        Me.Label15.Location = New System.Drawing.Point(3, 259)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(359, 14)
+        Me.Label15.TabIndex = 23
+        Me.Label15.Text = "Hint : Untuk Menghapus Data, Double Click pada data yang akan di hapus"
         '
         'Label13
         '
@@ -510,4 +539,6 @@ Partial Class FormPEnjualan
     Friend WithEvents lbtemp As System.Windows.Forms.Label
     Friend WithEvents lbdiscount As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

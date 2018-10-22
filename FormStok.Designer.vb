@@ -43,6 +43,7 @@ Partial Class FormStok
         Me.bttutup = New System.Windows.Forms.Button()
         Me.btnRestock = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -226,7 +227,7 @@ Partial Class FormStok
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bttutup.ForeColor = System.Drawing.Color.Chocolate
-        Me.bttutup.Location = New System.Drawing.Point(668, 368)
+        Me.bttutup.Location = New System.Drawing.Point(668, 386)
         Me.bttutup.Name = "bttutup"
         Me.bttutup.Size = New System.Drawing.Size(94, 26)
         Me.bttutup.TabIndex = 9
@@ -237,7 +238,7 @@ Partial Class FormStok
         '
         Me.btnRestock.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRestock.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnRestock.Location = New System.Drawing.Point(133, 368)
+        Me.btnRestock.Location = New System.Drawing.Point(129, 386)
         Me.btnRestock.Name = "btnRestock"
         Me.btnRestock.Size = New System.Drawing.Size(100, 26)
         Me.btnRestock.TabIndex = 10
@@ -248,19 +249,31 @@ Partial Class FormStok
         '
         Me.btnTambah.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTambah.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnTambah.Location = New System.Drawing.Point(15, 368)
+        Me.btnTambah.Location = New System.Drawing.Point(12, 386)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(94, 26)
         Me.btnTambah.TabIndex = 11
         Me.btnTambah.Text = "TAMBAH"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Maroon
+        Me.Label5.Location = New System.Drawing.Point(12, 356)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(338, 14)
+        Me.Label5.TabIndex = 13
+        Me.Label5.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
+        '
         'FormStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(774, 406)
+        Me.ClientSize = New System.Drawing.Size(774, 424)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.btnRestock)
         Me.Controls.Add(Me.bttutup)
@@ -298,4 +311,5 @@ Partial Class FormStok
     Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents btnRestock As System.Windows.Forms.Button
     Friend WithEvents btnTambah As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

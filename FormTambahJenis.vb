@@ -71,6 +71,7 @@ Public Class FormTambahJenis
         tbharga.Text = ""
         ComboKategori.Text = ""
         ComboMerek.Text = ""
+        FormStok.isigrid()
     End Sub
 
 

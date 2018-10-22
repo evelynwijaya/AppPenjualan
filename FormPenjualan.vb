@@ -263,10 +263,11 @@ Public Class FormPEnjualan
             lbnamabaju.Text = ""
             lbharga.Text = ""
             tbjumlah.Text = ""
+            lbdiscount.Text = ""
             tbkembalian.Text = ""
             tbbayar.Text = ""
             tbtotal.Text = ""
-
+            CheckBox1.Checked = False
         End If
     End Sub
 
@@ -368,4 +369,122 @@ Public Class FormPEnjualan
             e.Handled = True
         End If
     End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub lbtemp_Click(sender As Object, e As EventArgs) Handles lbtemp.Click
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+    End Sub
+
+    Private Sub tbtotal_TextChanged(sender As Object, e As EventArgs) Handles tbtotal.TextChanged
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub lbidtransaksi_Click(sender As Object, e As EventArgs) Handles lbidtransaksi.Click
+
+    End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+
+    End Sub
+
+    Private Sub tbkembalian_TextChanged(sender As Object, e As EventArgs) Handles tbkembalian.TextChanged
+
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+
+    End Sub
+
+    Private Sub lbidbaju_Click(sender As Object, e As EventArgs) Handles lbidbaju.Click
+
+    End Sub
+
+    Private Sub lbdiscount_Click(sender As Object, e As EventArgs) Handles lbdiscount.Click
+
+    End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+
+    End Sub
+
+    Private Sub GroupBox2_Enter(sender As Object, e As EventArgs) Handles GroupBox2.Enter
+
+    End Sub
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub lbkodebaju_Click(sender As Object, e As EventArgs) Handles lbkodebaju.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub lbnamabaju_Click(sender As Object, e As EventArgs) Handles lbnamabaju.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub lbharga_Click(sender As Object, e As EventArgs) Handles lbharga.Click
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub tbjumlah_TextChanged(sender As Object, e As EventArgs) Handles tbjumlah.TextChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    
 End Class

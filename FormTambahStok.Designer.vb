@@ -36,6 +36,7 @@ Partial Class FormTambahStok
         Me.tbserach = New System.Windows.Forms.TextBox()
         Me.btrefresh = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -125,7 +126,7 @@ Partial Class FormTambahStok
         Me.lbkodestok.Name = "lbkodestok"
         Me.lbkodestok.Size = New System.Drawing.Size(78, 20)
         Me.lbkodestok.TabIndex = 4
-        Me.lbkodestok.Text = "Kode Stok"
+        Me.lbkodestok.Text = "Kode Baju"
         '
         'Label1
         '
@@ -173,19 +174,31 @@ Partial Class FormTambahStok
         Me.DataGridView1.Size = New System.Drawing.Size(375, 219)
         Me.DataGridView1.TabIndex = 9
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Maroon
+        Me.Label5.Location = New System.Drawing.Point(23, 281)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(338, 14)
+        Me.Label5.TabIndex = 14
+        Me.Label5.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
+        '
         'FormTambahStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(755, 309)
+        Me.ClientSize = New System.Drawing.Size(755, 316)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btrefresh)
         Me.Controls.Add(Me.tbserach)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FormTambahStok"
-        Me.Text = "FormTambahStok"
+        Me.Text = "FormStokMasuk"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -206,4 +219,5 @@ Partial Class FormTambahStok
     Friend WithEvents tbjumlah As System.Windows.Forms.TextBox
     Friend WithEvents btupdate As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
 End Class

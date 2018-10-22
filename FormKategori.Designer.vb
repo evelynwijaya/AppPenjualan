@@ -37,6 +37,7 @@ Partial Class FormKategori
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.bttutup = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,7 +169,7 @@ Partial Class FormKategori
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bttutup.ForeColor = System.Drawing.Color.Chocolate
-        Me.bttutup.Location = New System.Drawing.Point(595, 266)
+        Me.bttutup.Location = New System.Drawing.Point(595, 288)
         Me.bttutup.Name = "bttutup"
         Me.bttutup.Size = New System.Drawing.Size(87, 28)
         Me.bttutup.TabIndex = 11
@@ -179,19 +180,31 @@ Partial Class FormKategori
         '
         Me.btnTambah.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTambah.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnTambah.Location = New System.Drawing.Point(15, 266)
+        Me.btnTambah.Location = New System.Drawing.Point(15, 288)
         Me.btnTambah.Name = "btnTambah"
         Me.btnTambah.Size = New System.Drawing.Size(87, 28)
         Me.btnTambah.TabIndex = 12
         Me.btnTambah.Text = "TAMBAH"
         Me.btnTambah.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Maroon
+        Me.Label4.Location = New System.Drawing.Point(12, 265)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(338, 14)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
+        '
         'FormKategori
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(694, 306)
+        Me.ClientSize = New System.Drawing.Size(694, 328)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.bttutup)
         Me.Controls.Add(Me.tbsearch)
@@ -222,4 +235,5 @@ Partial Class FormKategori
     Friend WithEvents tbsearch As System.Windows.Forms.TextBox
     Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents btnTambah As System.Windows.Forms.Button
+    Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
