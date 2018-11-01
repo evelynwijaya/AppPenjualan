@@ -37,7 +37,7 @@ Public Class FormTambahDataMerek
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
         Me.Close()
-        Form1.Show()
+        FormMerek.Show()
     End Sub
 
     Private Sub tbnamamerek_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamamerek.KeyPress

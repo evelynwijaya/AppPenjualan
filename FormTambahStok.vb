@@ -30,13 +30,14 @@ Public Class FormTambahStok
         Else
             MsgBox("Data Tersimpan !", vbInformation, "Information")
         End If
-
+        FormStok.isigrid()
         isigrid()
         tbjumlah.Text = ""
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
+        FormStok.Show()
     End Sub
 
     Sub cari(ByVal str As String)

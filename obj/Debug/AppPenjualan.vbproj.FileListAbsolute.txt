@@ -28,7 +28,6 @@ C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjual
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\bin\Debug\AppPenjualan.exe
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\bin\Debug\AppPenjualan.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\bin\Debug\AppPenjualan.xml
-C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.vbprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.Form1.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormKategori.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormMerek.resources
@@ -46,3 +45,5 @@ C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjual
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.exe
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.xml
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.pdb
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.vbprojResolveAssemblyReference.cache
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.DataBaju.resources

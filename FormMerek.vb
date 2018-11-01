@@ -24,8 +24,8 @@ Public Class FormMerek
 
         DataGridView1.Columns(0).HeaderText = "KODE MEREK"
         DataGridView1.Columns(1).HeaderText = "NAMA MEREK"
-        DataGridView1.Columns(0).Width = "150"
-        DataGridView1.Columns(1).Width = "150"
+        DataGridView1.Columns(0).Width = "305"
+        DataGridView1.Columns(1).Width = "305"
     End Sub
  Sub seleksi()
         Dim strtext As String = "Select * from tb_merek where kode_merek like '%" & tbcari.Text & "%' or nama_merek like '%" & tbcari.Text & "%'"
@@ -99,6 +99,7 @@ Public Class FormMerek
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         FormTambahDataMerek.Show()
+        Me.Hide()
     End Sub
 
     Private Sub tbcari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbcari.KeyPress

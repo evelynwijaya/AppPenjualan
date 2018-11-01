@@ -22,75 +22,76 @@ Partial Class FormTambahStok
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTambahStok))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.tbjumlah = New System.Windows.Forms.TextBox()
         Me.btupdate = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lbkodestok = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbserach = New System.Windows.Forms.TextBox()
         Me.btrefresh = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.tbjumlah)
         Me.GroupBox1.Controls.Add(Me.btupdate)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.lbkodestok)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.ForeColor = System.Drawing.Color.BurlyWood
-        Me.GroupBox1.Location = New System.Drawing.Point(411, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(760, 113)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(332, 266)
+        Me.GroupBox1.Size = New System.Drawing.Size(590, 441)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
-        'Button1
+        'Label6
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Chocolate
-        Me.Button1.Location = New System.Drawing.Point(233, 203)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(78, 26)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "TUTUP"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft NeoGothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Sienna
+        Me.Label6.Location = New System.Drawing.Point(25, 86)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(97, 26)
+        Me.Label6.TabIndex = 17
+        Me.Label6.Text = "Kode Baju"
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(138, 157)
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Location = New System.Drawing.Point(171, 213)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(173, 20)
+        Me.DateTimePicker1.Size = New System.Drawing.Size(400, 29)
         Me.DateTimePicker1.TabIndex = 13
         '
         'tbjumlah
         '
-        Me.tbjumlah.Location = New System.Drawing.Point(138, 119)
+        Me.tbjumlah.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbjumlah.Location = New System.Drawing.Point(171, 142)
         Me.tbjumlah.Name = "tbjumlah"
-        Me.tbjumlah.Size = New System.Drawing.Size(173, 20)
+        Me.tbjumlah.Size = New System.Drawing.Size(400, 29)
         Me.tbjumlah.TabIndex = 12
         '
         'btupdate
         '
         Me.btupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btupdate.ForeColor = System.Drawing.Color.Chocolate
-        Me.btupdate.Location = New System.Drawing.Point(138, 203)
+        Me.btupdate.Location = New System.Drawing.Point(172, 282)
         Me.btupdate.Name = "btupdate"
-        Me.btupdate.Size = New System.Drawing.Size(78, 26)
+        Me.btupdate.Size = New System.Drawing.Size(148, 41)
         Me.btupdate.TabIndex = 10
         Me.btupdate.Text = "SIMPAN"
         Me.btupdate.UseVisualStyleBackColor = True
@@ -98,80 +99,83 @@ Partial Class FormTambahStok
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft NeoGothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Sienna
-        Me.Label4.Location = New System.Drawing.Point(25, 157)
+        Me.Label4.Location = New System.Drawing.Point(25, 213)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(79, 20)
+        Me.Label4.Size = New System.Drawing.Size(99, 26)
         Me.Label4.TabIndex = 6
         Me.Label4.Text = "Tgl Masuk"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft NeoGothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Sienna
-        Me.Label2.Location = New System.Drawing.Point(25, 119)
+        Me.Label2.Location = New System.Drawing.Point(25, 142)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 20)
+        Me.Label2.Size = New System.Drawing.Size(134, 26)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Jumlah Masuk"
         '
         'lbkodestok
         '
         Me.lbkodestok.AutoSize = True
-        Me.lbkodestok.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbkodestok.Font = New System.Drawing.Font("Microsoft NeoGothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbkodestok.ForeColor = System.Drawing.Color.Sienna
-        Me.lbkodestok.Location = New System.Drawing.Point(25, 80)
+        Me.lbkodestok.Location = New System.Drawing.Point(167, 86)
         Me.lbkodestok.Name = "lbkodestok"
-        Me.lbkodestok.Size = New System.Drawing.Size(78, 20)
+        Me.lbkodestok.Size = New System.Drawing.Size(97, 26)
         Me.lbkodestok.TabIndex = 4
         Me.lbkodestok.Text = "Kode Baju"
         '
-        'Label1
+        'Button1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft NeoGothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label1.Location = New System.Drawing.Point(110, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(144, 28)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "DATA MASUK"
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Chocolate
+        Me.Button1.Location = New System.Drawing.Point(1207, 570)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(143, 41)
+        Me.Button1.TabIndex = 16
+        Me.Button1.Text = "TUTUP"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label3.Location = New System.Drawing.Point(12, 36)
+        Me.Label3.Location = New System.Drawing.Point(12, 71)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(41, 13)
+        Me.Label3.Size = New System.Drawing.Size(88, 31)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "Search"
         '
         'tbserach
         '
-        Me.tbserach.Location = New System.Drawing.Point(59, 33)
+        Me.tbserach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbserach.Location = New System.Drawing.Point(106, 76)
         Me.tbserach.Name = "tbserach"
-        Me.tbserach.Size = New System.Drawing.Size(331, 20)
+        Me.tbserach.Size = New System.Drawing.Size(1244, 26)
         Me.tbserach.TabIndex = 7
         '
         'btrefresh
         '
         Me.btrefresh.ForeColor = System.Drawing.Color.Chocolate
-        Me.btrefresh.Location = New System.Drawing.Point(315, 4)
+        Me.btrefresh.Location = New System.Drawing.Point(1219, 25)
         Me.btrefresh.Name = "btrefresh"
-        Me.btrefresh.Size = New System.Drawing.Size(75, 23)
+        Me.btrefresh.Size = New System.Drawing.Size(131, 45)
         Me.btrefresh.TabIndex = 8
         Me.btrefresh.Text = "REFRESH"
         Me.btrefresh.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 59)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 113)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(375, 219)
+        Me.DataGridView1.Size = New System.Drawing.Size(742, 441)
         Me.DataGridView1.TabIndex = 9
         '
         'Label5
@@ -179,18 +183,31 @@ Partial Class FormTambahStok
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Maroon
-        Me.Label5.Location = New System.Drawing.Point(23, 281)
+        Me.Label5.Location = New System.Drawing.Point(15, 557)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(338, 14)
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Chocolate
+        Me.Label1.Location = New System.Drawing.Point(610, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(171, 39)
+        Me.Label1.TabIndex = 15
+        Me.Label1.Text = "Data Masuk"
+        '
         'FormTambahStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(755, 316)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1362, 623)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btrefresh)
@@ -199,6 +216,7 @@ Partial Class FormTambahStok
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "FormTambahStok"
         Me.Text = "FormStokMasuk"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -211,7 +229,6 @@ Partial Class FormTambahStok
     Friend WithEvents tbserach As System.Windows.Forms.TextBox
     Friend WithEvents btrefresh As System.Windows.Forms.Button
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lbkodestok As System.Windows.Forms.Label
@@ -220,4 +237,6 @@ Partial Class FormTambahStok
     Friend WithEvents btupdate As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

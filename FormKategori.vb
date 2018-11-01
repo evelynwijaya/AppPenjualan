@@ -3,6 +3,7 @@ Public Class FormKategori
 
     Private Sub FormKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         isigridkategori()
+        judulgrid()
     End Sub
 
     Sub isigridkategori()
@@ -11,6 +12,17 @@ Public Class FormKategori
         Call tampildata(strtampil, strtabel)
         DataGridView1.DataSource = (ds.Tables("tb_kategori"))
         DataGridView1.ReadOnly = True
+    End Sub
+    Sub judulgrid()
+        Dim objAlternatingCellStyle As New DataGridViewCellStyle()
+        DataGridView1.AlternatingRowsDefaultCellStyle = objAlternatingCellStyle
+        Dim style As DataGridViewCellStyle = DataGridView1.Columns(0).DefaultCellStyle
+        objAlternatingCellStyle.BackColor = Color.Pink
+
+        DataGridView1.Columns(0).HeaderText = "KODE KATEGORI"
+        DataGridView1.Columns(1).HeaderText = "NAMA KATEGORI"
+        DataGridView1.Columns(0).Width = "325"
+        DataGridView1.Columns(1).Width = "325"
     End Sub
 
     Sub seleksi()

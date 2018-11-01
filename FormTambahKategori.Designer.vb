@@ -35,54 +35,57 @@ Partial Class FormTambahKategori
         'kop
         '
         Me.kop.AutoSize = True
-        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kop.Location = New System.Drawing.Point(76, 23)
+        Me.kop.BackColor = System.Drawing.Color.Transparent
+        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kop.Location = New System.Drawing.Point(547, 42)
         Me.kop.Name = "kop"
-        Me.kop.Size = New System.Drawing.Size(156, 25)
+        Me.kop.Size = New System.Drawing.Size(264, 45)
         Me.kop.TabIndex = 3
         Me.kop.Text = "Tambah Kategori"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(26, 80)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(319, 129)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(114, 18)
+        Me.Label4.Size = New System.Drawing.Size(186, 29)
         Me.Label4.TabIndex = 16
         Me.Label4.Text = "Kode Kategori"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 119)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(315, 196)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(118, 18)
+        Me.Label1.Size = New System.Drawing.Size(196, 29)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Nama Kategori"
         '
         'tbkodekategori
         '
-        Me.tbkodekategori.Location = New System.Drawing.Point(156, 81)
+        Me.tbkodekategori.Location = New System.Drawing.Point(552, 138)
         Me.tbkodekategori.Name = "tbkodekategori"
         Me.tbkodekategori.ReadOnly = True
-        Me.tbkodekategori.Size = New System.Drawing.Size(168, 20)
+        Me.tbkodekategori.Size = New System.Drawing.Size(384, 20)
         Me.tbkodekategori.TabIndex = 18
         '
         'tbnamakategori
         '
-        Me.tbnamakategori.Location = New System.Drawing.Point(156, 117)
+        Me.tbnamakategori.Location = New System.Drawing.Point(552, 205)
         Me.tbnamakategori.Name = "tbnamakategori"
-        Me.tbnamakategori.Size = New System.Drawing.Size(168, 20)
+        Me.tbnamakategori.Size = New System.Drawing.Size(384, 20)
         Me.tbnamakategori.TabIndex = 19
         '
         'tbsimpan
         '
         Me.tbsimpan.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbsimpan.Location = New System.Drawing.Point(152, 162)
+        Me.tbsimpan.Location = New System.Drawing.Point(552, 288)
         Me.tbsimpan.Name = "tbsimpan"
-        Me.tbsimpan.Size = New System.Drawing.Size(80, 32)
+        Me.tbsimpan.Size = New System.Drawing.Size(124, 46)
         Me.tbsimpan.TabIndex = 24
         Me.tbsimpan.Text = "SIMPAN"
         Me.tbsimpan.UseVisualStyleBackColor = True
@@ -90,9 +93,9 @@ Partial Class FormTambahKategori
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bttutup.Location = New System.Drawing.Point(244, 162)
+        Me.bttutup.Location = New System.Drawing.Point(701, 288)
         Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(80, 32)
+        Me.bttutup.Size = New System.Drawing.Size(118, 46)
         Me.bttutup.TabIndex = 25
         Me.bttutup.Text = "TUTUP"
         Me.bttutup.UseVisualStyleBackColor = True
@@ -101,8 +104,10 @@ Partial Class FormTambahKategori
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(336, 267)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1304, 610)
         Me.Controls.Add(Me.bttutup)
         Me.Controls.Add(Me.tbsimpan)
         Me.Controls.Add(Me.tbnamakategori)
@@ -112,6 +117,7 @@ Partial Class FormTambahKategori
         Me.Controls.Add(Me.kop)
         Me.Name = "FormTambahKategori"
         Me.Text = "FormTambahKategori"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

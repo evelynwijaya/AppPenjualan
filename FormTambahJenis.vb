@@ -91,4 +91,28 @@ Public Class FormTambahJenis
             e.Handled = True
         End If
     End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Harga_Click(sender As Object, e As EventArgs) Handles Harga.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub kop_Click(sender As Object, e As EventArgs) Handles kop.Click
+
+    End Sub
 End Class

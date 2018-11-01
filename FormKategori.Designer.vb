@@ -22,10 +22,8 @@ Partial Class FormKategori
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormKategori))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btRefresh = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.lbusername = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbkodekategori = New System.Windows.Forms.TextBox()
@@ -38,6 +36,7 @@ Partial Class FormKategori
         Me.bttutup = New System.Windows.Forms.Button()
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,79 +44,72 @@ Partial Class FormKategori
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label1.Location = New System.Drawing.Point(12, 44)
+        Me.Label1.Location = New System.Drawing.Point(12, 78)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 13)
+        Me.Label1.Size = New System.Drawing.Size(88, 31)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Search"
         '
         'btRefresh
         '
+        Me.btRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRefresh.ForeColor = System.Drawing.Color.Chocolate
-        Me.btRefresh.Location = New System.Drawing.Point(285, 12)
+        Me.btRefresh.Location = New System.Drawing.Point(1229, 27)
         Me.btRefresh.Name = "btRefresh"
-        Me.btRefresh.Size = New System.Drawing.Size(64, 23)
+        Me.btRefresh.Size = New System.Drawing.Size(121, 45)
         Me.btRefresh.TabIndex = 5
         Me.btRefresh.TabStop = False
         Me.btRefresh.Text = "Refresh"
         Me.btRefresh.UseVisualStyleBackColor = True
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft NeoGothic", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label2.Location = New System.Drawing.Point(88, 16)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(171, 28)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "DATA KATEGORI"
-        '
         'lbusername
         '
         Me.lbusername.AutoSize = True
-        Me.lbusername.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbusername.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbusername.ForeColor = System.Drawing.Color.Sienna
-        Me.lbusername.Location = New System.Drawing.Point(19, 68)
+        Me.lbusername.Location = New System.Drawing.Point(22, 69)
         Me.lbusername.Name = "lbusername"
-        Me.lbusername.Size = New System.Drawing.Size(105, 20)
+        Me.lbusername.Size = New System.Drawing.Size(144, 24)
         Me.lbusername.TabIndex = 4
         Me.lbusername.Text = "Kode Kategori"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Sienna
-        Me.Label3.Location = New System.Drawing.Point(19, 108)
+        Me.Label3.Location = New System.Drawing.Point(22, 132)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 20)
+        Me.Label3.Size = New System.Drawing.Size(149, 24)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Nama Kategori"
         '
         'tbkodekategori
         '
-        Me.tbkodekategori.Location = New System.Drawing.Point(143, 68)
+        Me.tbkodekategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbkodekategori.Location = New System.Drawing.Point(219, 66)
         Me.tbkodekategori.Name = "tbkodekategori"
         Me.tbkodekategori.ReadOnly = True
-        Me.tbkodekategori.Size = New System.Drawing.Size(167, 20)
+        Me.tbkodekategori.Size = New System.Drawing.Size(355, 29)
         Me.tbkodekategori.TabIndex = 6
         '
         'tbnamakategori
         '
-        Me.tbnamakategori.Location = New System.Drawing.Point(143, 108)
+        Me.tbnamakategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnamakategori.Location = New System.Drawing.Point(219, 132)
         Me.tbnamakategori.Name = "tbnamakategori"
-        Me.tbnamakategori.Size = New System.Drawing.Size(167, 20)
+        Me.tbnamakategori.Size = New System.Drawing.Size(355, 29)
         Me.tbnamakategori.TabIndex = 7
         '
         'btupdate
         '
         Me.btupdate.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btupdate.ForeColor = System.Drawing.Color.Chocolate
-        Me.btupdate.Location = New System.Drawing.Point(143, 134)
+        Me.btupdate.Location = New System.Drawing.Point(221, 190)
         Me.btupdate.Name = "btupdate"
-        Me.btupdate.Size = New System.Drawing.Size(87, 28)
+        Me.btupdate.Size = New System.Drawing.Size(113, 44)
         Me.btupdate.TabIndex = 9
         Me.btupdate.Text = "UPDATE"
         Me.btupdate.UseVisualStyleBackColor = True
@@ -127,51 +119,52 @@ Partial Class FormKategori
         Me.bthapus.BackColor = System.Drawing.Color.Red
         Me.bthapus.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bthapus.ForeColor = System.Drawing.Color.SeaShell
-        Me.bthapus.Location = New System.Drawing.Point(240, 134)
+        Me.bthapus.Location = New System.Drawing.Point(365, 190)
         Me.bthapus.Name = "bthapus"
-        Me.bthapus.Size = New System.Drawing.Size(70, 28)
+        Me.bthapus.Size = New System.Drawing.Size(113, 44)
         Me.bthapus.TabIndex = 10
         Me.bthapus.Text = "HAPUS"
         Me.bthapus.UseVisualStyleBackColor = False
         '
         'GroupBox1
         '
-        Me.GroupBox1.BackgroundImage = CType(resources.GetObject("GroupBox1.BackgroundImage"), System.Drawing.Image)
+        Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.GroupBox1.Controls.Add(Me.bthapus)
         Me.GroupBox1.Controls.Add(Me.btupdate)
         Me.GroupBox1.Controls.Add(Me.tbnamakategori)
         Me.GroupBox1.Controls.Add(Me.tbkodekategori)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.lbusername)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(355, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(763, 124)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(327, 248)
+        Me.GroupBox1.Size = New System.Drawing.Size(594, 375)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 68)
+        Me.DataGridView1.Location = New System.Drawing.Point(16, 124)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(334, 192)
+        Me.DataGridView1.Size = New System.Drawing.Size(725, 375)
         Me.DataGridView1.TabIndex = 7
         '
         'tbsearch
         '
-        Me.tbsearch.Location = New System.Drawing.Point(59, 41)
+        Me.tbsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbsearch.Location = New System.Drawing.Point(106, 78)
         Me.tbsearch.Name = "tbsearch"
-        Me.tbsearch.Size = New System.Drawing.Size(290, 20)
+        Me.tbsearch.Size = New System.Drawing.Size(1251, 29)
         Me.tbsearch.TabIndex = 8
         '
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bttutup.ForeColor = System.Drawing.Color.Chocolate
-        Me.bttutup.Location = New System.Drawing.Point(595, 288)
+        Me.bttutup.Location = New System.Drawing.Point(1246, 538)
         Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(87, 28)
+        Me.bttutup.Size = New System.Drawing.Size(111, 45)
         Me.bttutup.TabIndex = 11
         Me.bttutup.Text = "Tutup"
         Me.bttutup.UseVisualStyleBackColor = True
@@ -180,9 +173,9 @@ Partial Class FormKategori
         '
         Me.btnTambah.Font = New System.Drawing.Font("Microsoft NeoGothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTambah.ForeColor = System.Drawing.Color.Chocolate
-        Me.btnTambah.Location = New System.Drawing.Point(15, 288)
+        Me.btnTambah.Location = New System.Drawing.Point(15, 538)
         Me.btnTambah.Name = "btnTambah"
-        Me.btnTambah.Size = New System.Drawing.Size(87, 28)
+        Me.btnTambah.Size = New System.Drawing.Size(115, 45)
         Me.btnTambah.TabIndex = 12
         Me.btnTambah.Text = "TAMBAH"
         Me.btnTambah.UseVisualStyleBackColor = True
@@ -192,18 +185,30 @@ Partial Class FormKategori
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Maiandra GD", 8.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Maroon
-        Me.Label4.Location = New System.Drawing.Point(12, 265)
+        Me.Label4.Location = New System.Drawing.Point(12, 502)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(338, 14)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Chocolate
+        Me.Label2.Location = New System.Drawing.Point(590, 18)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(226, 45)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Data Kategori"
+        '
         'FormKategori
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(694, 328)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1362, 595)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnTambah)
         Me.Controls.Add(Me.bttutup)
@@ -214,6 +219,7 @@ Partial Class FormKategori
         Me.Controls.Add(Me.Label1)
         Me.Name = "FormKategori"
         Me.Text = "FormKategori"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -223,7 +229,6 @@ Partial Class FormKategori
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btRefresh As System.Windows.Forms.Button
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lbusername As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents tbkodekategori As System.Windows.Forms.TextBox
@@ -236,4 +241,5 @@ Partial Class FormKategori
     Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents btnTambah As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

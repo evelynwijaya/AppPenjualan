@@ -42,40 +42,48 @@ Partial Class FormTambahJenis
         'kop
         '
         Me.kop.AutoSize = True
-        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kop.Location = New System.Drawing.Point(114, 19)
+        Me.kop.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.kop.Location = New System.Drawing.Point(529, 59)
         Me.kop.Name = "kop"
-        Me.kop.Size = New System.Drawing.Size(101, 25)
+        Me.kop.Size = New System.Drawing.Size(167, 45)
         Me.kop.TabIndex = 2
         Me.kop.Text = "Jenis Baju"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(25, 63)
+        Me.Label4.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(344, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 18)
+        Me.Label4.Size = New System.Drawing.Size(132, 29)
         Me.Label4.TabIndex = 15
         Me.Label4.Text = "Kode Baju"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(25, 96)
+        Me.Label1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.Location = New System.Drawing.Point(344, 202)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 18)
+        Me.Label1.Size = New System.Drawing.Size(142, 29)
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "Nama Baju"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(25, 158)
+        Me.Label2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label2.Location = New System.Drawing.Point(345, 307)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(53, 18)
+        Me.Label2.Size = New System.Drawing.Size(83, 29)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Merek"
         '
@@ -91,60 +99,64 @@ Partial Class FormTambahJenis
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(25, 196)
+        Me.Label8.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label8.Location = New System.Drawing.Point(344, 357)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(71, 18)
+        Me.Label8.Size = New System.Drawing.Size(109, 29)
         Me.Label8.TabIndex = 22
         Me.Label8.Text = "Kategori"
         '
         'tbsimpan
         '
         Me.tbsimpan.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbsimpan.Location = New System.Drawing.Point(146, 237)
+        Me.tbsimpan.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.tbsimpan.Location = New System.Drawing.Point(537, 456)
         Me.tbsimpan.Name = "tbsimpan"
-        Me.tbsimpan.Size = New System.Drawing.Size(80, 32)
+        Me.tbsimpan.Size = New System.Drawing.Size(131, 36)
         Me.tbsimpan.TabIndex = 23
         Me.tbsimpan.Text = "SIMPAN"
         Me.tbsimpan.UseVisualStyleBackColor = True
         '
         'tbkodebaju
         '
-        Me.tbkodebaju.Location = New System.Drawing.Point(146, 61)
+        Me.tbkodebaju.Location = New System.Drawing.Point(537, 157)
         Me.tbkodebaju.Name = "tbkodebaju"
         Me.tbkodebaju.ReadOnly = True
-        Me.tbkodebaju.Size = New System.Drawing.Size(172, 20)
+        Me.tbkodebaju.Size = New System.Drawing.Size(499, 20)
         Me.tbkodebaju.TabIndex = 24
         '
         'tbnamabaju
         '
-        Me.tbnamabaju.Location = New System.Drawing.Point(146, 94)
+        Me.tbnamabaju.Location = New System.Drawing.Point(537, 211)
         Me.tbnamabaju.Name = "tbnamabaju"
-        Me.tbnamabaju.Size = New System.Drawing.Size(172, 20)
+        Me.tbnamabaju.Size = New System.Drawing.Size(499, 20)
         Me.tbnamabaju.TabIndex = 25
         '
         'ComboMerek
         '
         Me.ComboMerek.FormattingEnabled = True
-        Me.ComboMerek.Location = New System.Drawing.Point(146, 155)
+        Me.ComboMerek.Location = New System.Drawing.Point(537, 316)
         Me.ComboMerek.Name = "ComboMerek"
-        Me.ComboMerek.Size = New System.Drawing.Size(172, 21)
+        Me.ComboMerek.Size = New System.Drawing.Size(499, 21)
         Me.ComboMerek.TabIndex = 30
         '
         'ComboKategori
         '
         Me.ComboKategori.FormattingEnabled = True
-        Me.ComboKategori.Location = New System.Drawing.Point(146, 193)
+        Me.ComboKategori.Location = New System.Drawing.Point(537, 365)
         Me.ComboKategori.Name = "ComboKategori"
-        Me.ComboKategori.Size = New System.Drawing.Size(172, 21)
+        Me.ComboKategori.Size = New System.Drawing.Size(499, 21)
         Me.ComboKategori.TabIndex = 31
         '
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bttutup.Location = New System.Drawing.Point(232, 237)
+        Me.bttutup.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.bttutup.Location = New System.Drawing.Point(690, 456)
         Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(80, 32)
+        Me.bttutup.Size = New System.Drawing.Size(131, 36)
         Me.bttutup.TabIndex = 32
         Me.bttutup.Text = "TUTUP"
         Me.bttutup.UseVisualStyleBackColor = True
@@ -152,26 +164,30 @@ Partial Class FormTambahJenis
         'Harga
         '
         Me.Harga.AutoSize = True
-        Me.Harga.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Harga.Location = New System.Drawing.Point(25, 126)
+        Me.Harga.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Harga.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Harga.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Harga.Location = New System.Drawing.Point(345, 252)
         Me.Harga.Name = "Harga"
-        Me.Harga.Size = New System.Drawing.Size(53, 18)
+        Me.Harga.Size = New System.Drawing.Size(84, 29)
         Me.Harga.TabIndex = 33
         Me.Harga.Text = "Harga"
         '
         'tbharga
         '
-        Me.tbharga.Location = New System.Drawing.Point(146, 124)
+        Me.tbharga.Location = New System.Drawing.Point(537, 261)
         Me.tbharga.Name = "tbharga"
-        Me.tbharga.Size = New System.Drawing.Size(172, 20)
+        Me.tbharga.Size = New System.Drawing.Size(499, 20)
         Me.tbharga.TabIndex = 34
         '
         'FormTambahJenis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.WhiteSmoke
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(330, 307)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1299, 609)
         Me.Controls.Add(Me.tbharga)
         Me.Controls.Add(Me.Harga)
         Me.Controls.Add(Me.bttutup)
@@ -188,6 +204,7 @@ Partial Class FormTambahJenis
         Me.Controls.Add(Me.kop)
         Me.Name = "FormTambahJenis"
         Me.Text = "FormTambahStok"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

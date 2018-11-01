@@ -82,10 +82,13 @@ Public Class FormStok
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         FormTambahJenis.Show()
+        Me.Hide()
     End Sub
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
         FormTambahStok.Show()
+        Me.Hide()
+
     End Sub
 
     Private Sub tbharga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbharga.KeyPress

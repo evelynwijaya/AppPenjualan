@@ -40,6 +40,7 @@
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
         Me.Close()
+        FormKategori.Show()
 
     End Sub
 End Class

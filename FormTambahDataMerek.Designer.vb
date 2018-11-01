@@ -35,54 +35,56 @@ Partial Class FormTambahDataMerek
         'kop
         '
         Me.kop.AutoSize = True
-        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kop.Location = New System.Drawing.Point(54, 28)
+        Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.kop.Location = New System.Drawing.Point(559, 25)
         Me.kop.Name = "kop"
-        Me.kop.Size = New System.Drawing.Size(186, 25)
+        Me.kop.Size = New System.Drawing.Size(313, 45)
         Me.kop.TabIndex = 1
         Me.kop.Text = "Tambah Data Merek"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(15, 91)
+        Me.Label4.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(412, 131)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(96, 18)
+        Me.Label4.Size = New System.Drawing.Size(122, 24)
         Me.Label4.TabIndex = 14
         Me.Label4.Text = "Kode Merek"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 129)
+        Me.Label1.Font = New System.Drawing.Font("Times New Roman", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(412, 213)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(100, 18)
+        Me.Label1.Size = New System.Drawing.Size(127, 24)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Nama Merek"
         '
         'tbkodemerek
         '
-        Me.tbkodemerek.Location = New System.Drawing.Point(126, 89)
+        Me.tbkodemerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbkodemerek.Location = New System.Drawing.Point(567, 129)
         Me.tbkodemerek.Name = "tbkodemerek"
         Me.tbkodemerek.ReadOnly = True
-        Me.tbkodemerek.Size = New System.Drawing.Size(166, 20)
+        Me.tbkodemerek.Size = New System.Drawing.Size(332, 29)
         Me.tbkodemerek.TabIndex = 16
         '
         'tbnamamerek
         '
-        Me.tbnamamerek.Location = New System.Drawing.Point(126, 127)
+        Me.tbnamamerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnamamerek.Location = New System.Drawing.Point(567, 214)
         Me.tbnamamerek.Name = "tbnamamerek"
-        Me.tbnamamerek.Size = New System.Drawing.Size(166, 20)
+        Me.tbnamamerek.Size = New System.Drawing.Size(332, 29)
         Me.tbnamamerek.TabIndex = 17
         '
         'tbsimpan
         '
         Me.tbsimpan.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbsimpan.Location = New System.Drawing.Point(126, 166)
+        Me.tbsimpan.Location = New System.Drawing.Point(567, 285)
         Me.tbsimpan.Name = "tbsimpan"
-        Me.tbsimpan.Size = New System.Drawing.Size(80, 32)
+        Me.tbsimpan.Size = New System.Drawing.Size(141, 50)
         Me.tbsimpan.TabIndex = 18
         Me.tbsimpan.Text = "SIMPAN"
         Me.tbsimpan.UseVisualStyleBackColor = True
@@ -90,9 +92,9 @@ Partial Class FormTambahDataMerek
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bttutup.Location = New System.Drawing.Point(212, 166)
+        Me.bttutup.Location = New System.Drawing.Point(750, 285)
         Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(80, 32)
+        Me.bttutup.Size = New System.Drawing.Size(149, 50)
         Me.bttutup.TabIndex = 33
         Me.bttutup.Text = "TUTUP"
         Me.bttutup.UseVisualStyleBackColor = True
@@ -102,7 +104,8 @@ Partial Class FormTambahDataMerek
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(321, 298)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1308, 600)
         Me.Controls.Add(Me.bttutup)
         Me.Controls.Add(Me.tbsimpan)
         Me.Controls.Add(Me.tbnamamerek)
@@ -110,8 +113,10 @@ Partial Class FormTambahDataMerek
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.kop)
+        Me.ForeColor = System.Drawing.Color.Black
         Me.Name = "FormTambahDataMerek"
         Me.Text = "FormTambahDataMerek"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
