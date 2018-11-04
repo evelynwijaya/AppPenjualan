@@ -27,6 +27,7 @@ Partial Class DataBaju
         Me.Button1 = New System.Windows.Forms.Button()
         Me.tbsearch = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -35,7 +36,7 @@ Partial Class DataBaju
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(25, 95)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(1259, 420)
+        Me.DataGridView1.Size = New System.Drawing.Size(1303, 420)
         Me.DataGridView1.TabIndex = 0
         '
         'Label2
@@ -52,7 +53,7 @@ Partial Class DataBaju
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(457, 536)
+        Me.Button1.Location = New System.Drawing.Point(241, 536)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(179, 40)
         Me.Button1.TabIndex = 16
@@ -64,7 +65,7 @@ Partial Class DataBaju
         Me.tbsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbsearch.Location = New System.Drawing.Point(122, 60)
         Me.tbsearch.Name = "tbsearch"
-        Me.tbsearch.Size = New System.Drawing.Size(1251, 29)
+        Me.tbsearch.Size = New System.Drawing.Size(1206, 29)
         Me.tbsearch.TabIndex = 18
         '
         'Label1
@@ -78,12 +79,23 @@ Partial Class DataBaju
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Search"
         '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(644, 536)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(179, 40)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Tutup"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'DataBaju
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1306, 612)
+        Me.ClientSize = New System.Drawing.Size(1362, 612)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.tbsearch)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
@@ -102,4 +114,5 @@ Partial Class DataBaju
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents tbsearch As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

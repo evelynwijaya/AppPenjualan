@@ -34,6 +34,8 @@ Partial Class Form1
         Me.MerekToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.KategoriToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TransaksiPenjualanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DetailTransaksiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LaporanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -107,10 +109,25 @@ Partial Class Form1
         '
         'TransaksiToolStripMenuItem
         '
+        Me.TransaksiToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TransaksiPenjualanToolStripMenuItem, Me.DetailTransaksiToolStripMenuItem})
         Me.TransaksiToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TransaksiToolStripMenuItem.Name = "TransaksiToolStripMenuItem"
-        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(204, 34)
-        Me.TransaksiToolStripMenuItem.Text = "Transaksi Penjualan"
+        Me.TransaksiToolStripMenuItem.Size = New System.Drawing.Size(108, 34)
+        Me.TransaksiToolStripMenuItem.Text = "Transaksi"
+        '
+        'TransaksiPenjualanToolStripMenuItem
+        '
+        Me.TransaksiPenjualanToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TransaksiPenjualanToolStripMenuItem.Name = "TransaksiPenjualanToolStripMenuItem"
+        Me.TransaksiPenjualanToolStripMenuItem.Size = New System.Drawing.Size(265, 34)
+        Me.TransaksiPenjualanToolStripMenuItem.Text = "Transaksi Penjualan"
+        '
+        'DetailTransaksiToolStripMenuItem
+        '
+        Me.DetailTransaksiToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DetailTransaksiToolStripMenuItem.Name = "DetailTransaksiToolStripMenuItem"
+        Me.DetailTransaksiToolStripMenuItem.Size = New System.Drawing.Size(265, 34)
+        Me.DetailTransaksiToolStripMenuItem.Text = "Detail Transaksi"
         '
         'LaporanToolStripMenuItem
         '
@@ -151,4 +168,6 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel2 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel3 As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents LaporanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TransaksiPenjualanToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DetailTransaksiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

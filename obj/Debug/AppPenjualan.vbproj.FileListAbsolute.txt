@@ -47,3 +47,4 @@ C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjual
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.pdb
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.vbprojResolveAssemblyReference.cache
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.DataBaju.resources
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.DetailTransaksi.resources

@@ -23,6 +23,8 @@ Partial Class FormPEnjualan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbstokawal = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbidbaju = New System.Windows.Forms.Label()
@@ -53,8 +55,6 @@ Partial Class FormPEnjualan
         Me.btsimpan = New System.Windows.Forms.Button()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.lbstokawal = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -91,6 +91,27 @@ Partial Class FormPEnjualan
         Me.GroupBox1.Size = New System.Drawing.Size(1326, 671)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(926, 113)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(110, 21)
+        Me.Label1.TabIndex = 27
+        Me.Label1.Text = "Stok Awal :"
+        '
+        'lbstokawal
+        '
+        Me.lbstokawal.AutoSize = True
+        Me.lbstokawal.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbstokawal.Location = New System.Drawing.Point(1042, 113)
+        Me.lbstokawal.Name = "lbstokawal"
+        Me.lbstokawal.Size = New System.Drawing.Size(78, 21)
+        Me.lbstokawal.TabIndex = 11
+        Me.lbstokawal.Text = "stokawal"
         '
         'Button1
         '
@@ -165,7 +186,7 @@ Partial Class FormPEnjualan
         'tbjumlah
         '
         Me.tbjumlah.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbjumlah.Location = New System.Drawing.Point(780, 103)
+        Me.tbjumlah.Location = New System.Drawing.Point(780, 108)
         Me.tbjumlah.Name = "tbjumlah"
         Me.tbjumlah.Size = New System.Drawing.Size(117, 28)
         Me.tbjumlah.TabIndex = 11
@@ -175,7 +196,7 @@ Partial Class FormPEnjualan
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(688, 110)
+        Me.Label8.Location = New System.Drawing.Point(688, 113)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(86, 21)
         Me.Label8.TabIndex = 10
@@ -412,27 +433,6 @@ Partial Class FormPEnjualan
         Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBox1.TabIndex = 20
         Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'lbstokawal
-        '
-        Me.lbstokawal.AutoSize = True
-        Me.lbstokawal.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbstokawal.Location = New System.Drawing.Point(1042, 113)
-        Me.lbstokawal.Name = "lbstokawal"
-        Me.lbstokawal.Size = New System.Drawing.Size(78, 21)
-        Me.lbstokawal.TabIndex = 26
-        Me.lbstokawal.Text = "stokawal"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(926, 112)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(110, 21)
-        Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Stok Awal :"
         '
         'FormPEnjualan
         '

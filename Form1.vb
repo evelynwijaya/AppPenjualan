@@ -53,12 +53,6 @@ Public Class Form1
         Me.Hide()
     End Sub
 
-    Private Sub TransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransaksiToolStripMenuItem.Click
-        FormPEnjualan.Show()
-        Me.Hide()
-
-    End Sub
-
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim dialog As DialogResult
         dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
@@ -68,5 +62,15 @@ Public Class Form1
             Application.ExitThread()
 
         End If
+    End Sub
+
+    Private Sub TransaksiPenjualanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TransaksiPenjualanToolStripMenuItem.Click
+        FormPEnjualan.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DetailTransaksiToolStripMenuItem.Click
+        DetailTransaksi.Show()
+        Me.Hide()
     End Sub
 End Class
