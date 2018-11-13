@@ -56,27 +56,42 @@ Public Class FormTambahJenis
     End Sub
 
     Private Sub tbsimpan_Click(sender As Object, e As EventArgs) Handles tbsimpan.Click
-        Dim strsimpan As String = "Insert Into tb_stok ( kode_baju , nama_baju , nama_merek , kategori , harga )" _
-                                  & "Value ('" & tbkodebaju.Text & "','" & tbnamabaju.Text & "','" & ComboMerek.Text & "','" & ComboKategori.Text & "','" & tbharga.Text & "')"
-        Call simpandata(strsimpan)
-
+       
         If tbnamabaju.Text = "" Or ComboMerek.Text = "" Or ComboKategori.Text = "" Or tbharga.Text = "" Then
             MsgBox("Mohon Lengkapi Data!", vbInformation, "Information")
         Else
-            MsgBox("Data Tersimpan !", vbInformation, "Information")
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            str = "SELECT * from tb_stok WHERE nama_baju = '" & tbnamabaju.Text & "'"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Nama Baju sudah ada, silahkan menginput data baru!", vbInformation, "Information")
+                tbnamabaju.Text = ""
+                tbharga.Text = ""
+                ComboKategori.Text = ""
+                ComboMerek.Text = ""
+            Else
+                Dim strsimpan As String = "Insert Into tb_stok ( kode_baju , nama_baju , nama_merek , kategori , harga )" _
+                                     & "Value ('" & tbkodebaju.Text & "','" & tbnamabaju.Text & "','" & ComboMerek.Text & "','" & ComboKategori.Text & "','" & tbharga.Text & "')"
+                Call simpandata(strsimpan)
+                MsgBox("Data Tersimpan !", vbInformation, "Information")
+
+                autokode()
+                tbnamabaju.Text = ""
+                tbharga.Text = ""
+                ComboKategori.Text = ""
+                ComboMerek.Text = ""
+                FormStok.isigrid()
+            End If
         End If
 
-        autokode()
-        tbnamabaju.Text = ""
-        tbharga.Text = ""
-        ComboKategori.Text = ""
-        ComboMerek.Text = ""
-        FormStok.isigrid()
     End Sub
 
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        Me.Close()
+        Me.Hide()
         FormStok.Show()
     End Sub
 
@@ -91,28 +106,16 @@ Public Class FormTambahJenis
             e.Handled = True
         End If
     End Sub
+   
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+    Private Sub FormTambahJenis_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
 
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Harga_Click(sender As Object, e As EventArgs) Handles Harga.Click
-
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-
-    End Sub
-
-    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
-
-    End Sub
-
-    Private Sub kop_Click(sender As Object, e As EventArgs) Handles kop.Click
-
+        End If
     End Sub
 End Class

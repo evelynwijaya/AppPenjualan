@@ -37,6 +37,7 @@ Partial Class FormKategori
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btncari = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -155,7 +156,7 @@ Partial Class FormKategori
         Me.tbsearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbsearch.Location = New System.Drawing.Point(106, 78)
         Me.tbsearch.Name = "tbsearch"
-        Me.tbsearch.Size = New System.Drawing.Size(1251, 29)
+        Me.tbsearch.Size = New System.Drawing.Size(1119, 29)
         Me.tbsearch.TabIndex = 8
         '
         'bttutup
@@ -202,12 +203,22 @@ Partial Class FormKategori
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Data Kategori"
         '
+        'btncari
+        '
+        Me.btncari.Location = New System.Drawing.Point(1231, 78)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(119, 29)
+        Me.btncari.TabIndex = 15
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
         'FormKategori
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1362, 595)
+        Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnTambah)
@@ -242,4 +253,5 @@ Partial Class FormKategori
     Friend WithEvents btnTambah As System.Windows.Forms.Button
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents btncari As System.Windows.Forms.Button
 End Class

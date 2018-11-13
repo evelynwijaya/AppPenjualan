@@ -61,17 +61,24 @@ Public Class DetailTransaksi
             LaporanCrystalReport.CrystalReportViewer1.Refresh()
         End If
     End Sub
-    Sub seleksi()
-        Dim strtext As String = "SELECT * FROM tb_transaksi INNER JOIN tb_detail ON tb_transaksi.id_transaksi = tb_detail.id_transaksi WHERE tb_transaksi.tgl_transaksi = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' AND tb_transaksi.id_transaksi = '" & ComboBox1.Text & "'"
-        Using cmd2 As New MySqlCommand(strtext, konek)
-            Using adapter As New MySqlDataAdapter(cmd2)
-                Using DataSet As New DataSet()
-                    adapter.Fill(DataSet)
-                    DataGridView1.DataSource = DataSet.Tables(0)
-                    DataGridView1.ReadOnly = True
-                End Using
-            End Using
-        End Using
+    'Sub seleksi()
+    '    Dim strtext As String = "SELECT * FROM tb_transaksi INNER JOIN tb_detail ON tb_transaksi.id_transaksi = tb_detail.id_transaksi WHERE tb_transaksi.tgl_transaksi = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' AND tb_transaksi.id_transaksi = '" & ComboBox1.Text & "'"
+    '    Using cmd2 As New MySqlCommand(strtext, konek)
+    '        Using adapter As New MySqlDataAdapter(cmd2)
+    '            Using DataSet As New DataSet()
+    '                adapter.Fill(DataSet)
+    '                DataGridView1.DataSource = DataSet.Tables(0)
+    '                DataGridView1.ReadOnly = True
+    '            End Using
+    '        End Using
+    '    End Using
+    'End Sub
+    Sub Cari(ByVal str As String)
+        Dim strtampil As String = str
+        Dim strtabel As String = "tb_detail"
+        Call tampildata(strtampil, strtabel)
+        DataGridView1.DataSource = (ds.Tables("tb_detail"))
+        DataGridView1.ReadOnly = True
     End Sub
 
     Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
@@ -84,7 +91,7 @@ Public Class DetailTransaksi
         dr = cmd.ExecuteReader()
 
         If dr.HasRows Then
-            seleksi()
+            Cari(str)
             judulgrid()
         Else
             MsgBox("Tidak Ada Transaksi!", vbInformation, "Information")
@@ -98,7 +105,17 @@ Public Class DetailTransaksi
 
    
     Private Sub btntutup_Click(sender As Object, e As EventArgs) Handles btntutup.Click
-        Me.Close()
+        Me.Hide()
         Form1.Show()
+    End Sub
+    Private Sub DetailTransaksi_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
     End Sub
 End Class

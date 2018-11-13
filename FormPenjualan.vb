@@ -1,5 +1,4 @@
 ﻿Imports System.Data.Odbc
-Imports MySql.Data.MySqlClient
 
 Public Class FormPEnjualan
     Private Sub FormPEnjualan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -63,91 +62,6 @@ Public Class FormPEnjualan
         lbidtransaksi.Text = "T" & Format(DateTimePicker1.Value, "yyyyMMdd") & Microsoft.VisualBasic.Right("0000" & no, 4)
     End Sub
 
-    Private Sub btnext_Click(sender As Object, e As EventArgs) Handles btnext.Click
-        If lbkodebaju.Text = "" Or tbjumlah.Text = "" Then
-            MsgBox("Input Jumlah terlebih dahulu!", vbInformation, "Information")
-            tbjumlah.Focus()
-        Else
-            Call KonekDB()
-            cmd = New Odbc.OdbcCommand
-            cmd.CommandType = CommandType.Text
-            cmd.Connection = conn
-
-            str = "Select * from tb_sementara where kode_baju = '" & lbkodebaju.Text & "'"
-            cmd.CommandText = str
-            dr = cmd.ExecuteReader()
-            If dr.HasRows Then
-                Dim Bawal As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value()
-                Dim SAwal As Integer = lbstokawal.Text
-                Dim JAwal As Integer = tbjumlah.Text
-                Dim Stok As Integer
-                Stok = SAwal - JAwal
-                Dim tambah As Integer = tbjumlah.Text + Bawal
-                Dim total As Integer = tambah * lbharga.Text
-
-                If JAwal > SAwal Then
-                    MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
-                Else
-                    Dim strupdate1 As String = "Update tb_sementara set jumlah = '" & tambah & "', total = '" & total & "' where id_transaksi = '" & lbidtransaksi.Text & "' and kode_baju = '" & lbkodebaju.Text & "'"
-                    Call editdata(strupdate1)
-
-                    Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
-                    Call editdata(strupdate2)
-
-                    isigridsementara()
-                    lbkodebaju.Text = ""
-                    lbnamabaju.Text = ""
-                    lbharga.Text = ""
-                    tbjumlah.Text = ""
-
-                End If
-
-                Dim totalbayar As String = 0
-                
-                For i As Integer = 0 To DataGridView2.RowCount - 1
-                    totalbayar += DataGridView2.Rows(i).Cells(6).Value
-                Next
-               
-                    tbtotal.Text = totalbayar
-
-            Else
-                Dim SAwal As Integer = lbstokawal.Text
-                Dim JAwal As Integer = tbjumlah.Text
-                Dim Stok As Integer
-
-
-                If JAwal > SAwal Then
-                    MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
-                Else
-                    Stok = SAwal - JAwal
-                    Dim total As Integer = tbjumlah.Text * lbharga.Text
-                    Dim strsimpan As String = "Insert into tb_sementara ( id_transaksi , kode_baju , nama_baju , jumlah , harga , total , stokawal ) " _
-                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & total & "', '" & Stok & "')"
-                    Call simpandata(strsimpan)
-
-                    Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
-                    Call editdata(strupdate2)
-
-                    isigridsementara()
-                    lbkodebaju.Text = ""
-                    lbnamabaju.Text = ""
-                    lbharga.Text = ""
-                    tbjumlah.Text = ""
-
-                    Dim totalbayar As String = 0
-                  
-                    For i As Integer = 0 To DataGridView2.RowCount - 1
-                        totalbayar += DataGridView2.Rows(i).Cells(6).Value
-                    Next
-                   
-                        tbtotal.Text = totalbayar
-
-                End If
-            End If
-        End If
-
-
-    End Sub
 
     Private Sub Combodiskon_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combodiskon.SelectedIndexChanged
         Dim totalbayar As String = 0
@@ -219,6 +133,7 @@ Public Class FormPEnjualan
         autokode()
         lbidbaju.Text = ""
         lbkodebaju.Text = ""
+        lbstokawal.Text = ""
         lbnamabaju.Text = ""
         lbharga.Text = ""
         tbjumlah.Text = ""
@@ -232,6 +147,7 @@ Public Class FormPEnjualan
     Private Sub btrefresh_Click(sender As Object, e As EventArgs) Handles btrefresh.Click
         lbkodebaju.Text = ""
         lbnamabaju.Text = ""
+        lbstokawal.Text = ""
         lbharga.Text = ""
         tbjumlah.Text = ""
         isigridsementara()
@@ -266,13 +182,10 @@ Public Class FormPEnjualan
             End If
         End If
     End Sub
-    Sub tutupform()
-       
-    End Sub
-
+    
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
         If DataGridView2.RowCount <= 1 Then
-            Me.Close()
+            Me.Hide()
             Form1.Show()
 
         ElseIf MsgBox("Transaksi belum selesai! Apakah anda yakin ingin keluar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
@@ -290,7 +203,9 @@ Public Class FormPEnjualan
             Next
             Dim strhapus As String = "Delete from tb_sementara"
             Call hapusdata(strhapus)
-            Me.Close()
+            isigridsementara()
+            tbtotal.Text = ""
+            Me.Hide()
             Form1.Show()
         End If
     End Sub
@@ -322,6 +237,115 @@ Public Class FormPEnjualan
     End Sub
 
     Private Sub FormPEnjualan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
-        'tutupform()
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+
+            Dim kodebaju As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(1).Value()
+            Dim idtransaksi As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(0).Value()
+
+            Dim i As Integer
+            For i = 0 To DataGridView2.RowCount - 2
+                lbkodebaju.Text = DataGridView2.Item(1, i).Value
+                Dim Jumlah2 As Integer = DataGridView2.Item(3, i).Value
+                Dim Jumlah1 As Integer = DataGridView2.Item(4, i).Value
+                Dim kembali As Integer = Jumlah1 + Jumlah2
+                Dim strupdate As String = "Update tb_stok set stok = '" & kembali & "' where kode_baju = '" & lbkodebaju.Text & "'"
+                Call editdata(strupdate)
+            Next
+            Dim strhapus As String = "Delete from tb_sementara"
+            Call hapusdata(strhapus)
+
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
+    End Sub
+
+    Private Sub btnext_Click_1(sender As Object, e As EventArgs) Handles btnext.Click
+        If lbkodebaju.Text = "" Or tbjumlah.Text = "" Then
+            MsgBox("Input Jumlah terlebih dahulu!", vbInformation, "Information")
+            tbjumlah.Focus()
+        Else
+            Call KonekDB()
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+
+            str = "Select * from tb_sementara where kode_baju = '" & lbkodebaju.Text & "'"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                Dim Bawal As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value()
+                Dim SAwal As Integer = lbstokawal.Text
+                Dim JAwal As Integer = tbjumlah.Text
+                Dim Stok As Integer
+                Stok = SAwal - JAwal
+                Dim tambah As Integer = tbjumlah.Text + Bawal
+                Dim total As Integer = tambah * lbharga.Text
+
+                If JAwal > SAwal Then
+                    MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
+                Else
+                    Dim strupdate1 As String = "Update tb_sementara set jumlah = '" & tambah & "', total = '" & total & "' where id_transaksi = '" & lbidtransaksi.Text & "' and kode_baju = '" & lbkodebaju.Text & "'"
+                    Call editdata(strupdate1)
+
+                    Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
+                    Call editdata(strupdate2)
+
+                    isigridsementara()
+                    lbkodebaju.Text = ""
+                    lbnamabaju.Text = ""
+                    lbharga.Text = ""
+                    lbstokawal.Text = ""
+                    tbjumlah.Text = ""
+
+                End If
+
+                Dim totalbayar As String = 0
+
+                For i As Integer = 0 To DataGridView2.RowCount - 1
+                    totalbayar += DataGridView2.Rows(i).Cells(6).Value
+                Next
+
+                tbtotal.Text = totalbayar
+
+            Else
+                Dim SAwal As Integer = lbstokawal.Text
+                Dim JAwal As Integer = tbjumlah.Text
+                Dim Stok As Integer
+
+
+                If JAwal > SAwal Then
+                    MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
+                Else
+                    Stok = SAwal - JAwal
+                    Dim total As Integer = tbjumlah.Text * lbharga.Text
+                    Dim strsimpan As String = "Insert into tb_sementara ( id_transaksi , kode_baju , nama_baju , jumlah , harga , total , stokawal ) " _
+                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & total & "', '" & Stok & "')"
+                    Call simpandata(strsimpan)
+
+                    Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
+                    Call editdata(strupdate2)
+
+                    isigridsementara()
+                    lbkodebaju.Text = ""
+                    lbnamabaju.Text = ""
+                    lbstokawal.Text = ""
+                    lbharga.Text = ""
+                    tbjumlah.Text = ""
+
+                    Dim totalbayar As String = 0
+
+                    For i As Integer = 0 To DataGridView2.RowCount - 1
+                        totalbayar += DataGridView2.Rows(i).Cells(6).Value
+                    Next
+
+                    tbtotal.Text = totalbayar
+
+                End If
+            End If
+        End If
     End Sub
 End Class

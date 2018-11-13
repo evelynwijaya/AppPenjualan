@@ -1,4 +1,4 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Data.Odbc
 Public Class FormKategori
 
     Private Sub FormKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,19 +24,14 @@ Public Class FormKategori
         DataGridView1.Columns(0).Width = "325"
         DataGridView1.Columns(1).Width = "325"
     End Sub
-
-    Sub seleksi()
-        Dim strtext As String = "Select * from tb_kategori where kode_kategori like '%" & tbsearch.Text & "%' or nama_kategori like '%" & tbsearch.Text & "%'"
-        Using cmd2 As New MySqlCommand(strtext, konek)
-            Using adapter As New MySqlDataAdapter(cmd2)
-                Using DataSet As New DataSet()
-                    adapter.Fill(DataSet)
-                    DataGridView1.DataSource = DataSet.Tables(0)
-                    DataGridView1.ReadOnly = True
-                End Using
-            End Using
-        End Using
+    Sub Cari(ByVal str As String)
+        Dim strtampil As String = str
+        Dim strtabel As String = "tb_kategori"
+        Call tampildata(strtampil, strtabel)
+        DataGridView1.DataSource = (ds.Tables("tb_kategori"))
+        DataGridView1.ReadOnly = True
     End Sub
+
 
     Private Sub btRefresh_Click(sender As Object, e As EventArgs) Handles btRefresh.Click
         tbsearch.Text = ""
@@ -45,9 +40,6 @@ Public Class FormKategori
         isigridkategori()
     End Sub
 
-    Private Sub tbsearch_TextChanged(sender As Object, e As EventArgs) Handles tbsearch.TextChanged
-        seleksi()
-    End Sub
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         tbkodekategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value
@@ -55,38 +47,66 @@ Public Class FormKategori
     End Sub
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
-        Dim stredit As String = "Update tb_kategori set kategori = '" & tbnamakategori.Text & "' where kode_kategori = '" & tbkodekategori.Text & "'"
-        Call editdata(stredit)
-
         If tbnamakategori.Text = "" Then
             MsgBox("Mohon Lengkapi Data!", vbInformation, "Information")
         Else
-            MsgBox("Data Terupdate!", vbInformation, "Information")
-        End If
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            str = "SELECT * from tb_kategori WHERE nama_kategori = '" & tbnamakategori.Text & "'"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Nama Kategori sudah ada, silahkan menginput data baru!", vbInformation, "Information")
+                tbnamakategori.Text = ""
+            Else
 
-        tbsearch.Text = ""
-        isigridkategori()
-        tbkodekategori.Text = ""
-        tbnamakategori.Text = ""
-        tbnamakategori.Focus()
+                Dim stredit As String = "Update tb_kategori set kategori = '" & tbnamakategori.Text & "' where kode_kategori = '" & tbkodekategori.Text & "'"
+                Call editdata(stredit)
+
+                MsgBox("Data Terupdate!", vbInformation, "Information")
+
+                tbsearch.Text = ""
+                isigridkategori()
+                tbkodekategori.Text = ""
+                tbnamakategori.Text = ""
+                tbnamakategori.Focus()
+            End If
+        End If
     End Sub
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        Me.Close()
+        Me.Hide()
         Form1.Show()
     End Sub
 
     Private Sub bthapus_Click(sender As Object, e As EventArgs) Handles bthapus.Click
-        If tbnamakategori.Text <> "" Then
-            Dim strhapus As String = "DELETE FROM tb_kategori WHERE kode_kategori = '" & tbkodekategori.Text & "'"
-            If MsgBox("Apakah Anda yakin ingin menghapus data?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
-                Call hapusdata(strhapus)
-                MsgBox("Data Berhasil Dihapus!", vbInformation, "Information")
-            End If
-        Else
+        If tbnamakategori.Text = "" Then
             MsgBox("Pilih data terlebih dahulu!", vbCritical, "Error")
+        Else
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            str = "SELECT * FROM tb_stok WHERE kategori = '" & tbnamakategori.Text & "'"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Maaf, Data Kategori ini tidak dapat dihapus karena Sudah Terdapat dalam Data Baju!", vbInformation, "Information")
+                tbkodekategori.Text = ""
+                tbnamakategori.Text = ""
+            Else
+
+                Dim strhapus As String = "DELETE FROM tb_kategori WHERE kode_kategori = '" & tbkodekategori.Text & "'"
+                If MsgBox("Apakah Anda yakin ingin menghapus data?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
+                    Call hapusdata(strhapus)
+                    MsgBox("Data Berhasil Dihapus!", vbInformation, "Information")
+                    isigridkategori()
+                    tbkodekategori.Text = ""
+                    tbnamakategori.Text = ""
+                End If
+            End If
         End If
-        isigridkategori()
+
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
@@ -102,6 +122,37 @@ Public Class FormKategori
     Private Sub tbnamakategori_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamakategori.KeyPress
         If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack) Then
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub FormKategori_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        Call KonekDB()
+        cmd = New Odbc.OdbcCommand
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        str = "Select * from tb_kategori where kode_kategori like '%" & tbsearch.Text & "%' or nama_kategori like '%" & tbsearch.Text & "%'"
+
+        cmd.CommandText = str
+        dr = cmd.ExecuteReader()
+        If dr.HasRows Then
+            Cari(str)
+        Else
+            Cari(str)
+            MsgBox("Maaf, data tidak ditemukan!", vbInformation, "Pesan")
+            tbsearch.Text = ""
+            judulgrid()
+
         End If
     End Sub
 End Class

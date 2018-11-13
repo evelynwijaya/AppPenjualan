@@ -1,8 +1,9 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Data.Odbc
 Public Class FormStok
     Private Sub FormStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         isigrid()
-
+        isikategosi()
+        isimerek()
     End Sub
 
     Sub isigrid()
@@ -13,26 +14,74 @@ Public Class FormStok
         DataGridView1.ReadOnly = True
     End Sub
 
+    Sub isimerek()
+        Dim sql As String = "Select * from tb_merek Order by kode_merek"
+        Call KonekDB()
+        da = New Data.Odbc.OdbcDataAdapter(sql, conn)
+        Dim dt As New DataTable
+        Try
+            da.Fill(dt)
+            ComboMerek.DataSource = dt
+            ComboMerek.ValueMember = "kode_merek"
+            ComboMerek.DisplayMember = "nama_merek"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Sub isikategosi()
+        Dim sql As String = "Select * from tb_kategori Order by kode_kategori"
+        Call KonekDB()
+        da = New Data.Odbc.OdbcDataAdapter(sql, conn)
+        Dim dt As New DataTable
+        Try
+            da.Fill(dt)
+            ComboKategori.DataSource = dt
+            ComboKategori.ValueMember = "kode_kategori"
+            ComboKategori.DisplayMember = "kategori"
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
+       
         lbkodestok.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value()
         tbnamabaju.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(1).Value()
         ComboMerek.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value()
         tbharga.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(4).Value()
-        ComboKategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(6).Value()
+        ComboKategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(5).Value()
     End Sub
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
-        Dim strupdate As String = "Update tb_stok set nama_baju = '" & tbnamabaju.Text & "', nama_merek = '" & ComboMerek.Text & "', harga = '" & tbharga.Text & "', kategori = '" & ComboKategori.Text & "' Where kode_baju = '" & lbkodestok.Text & "'"
-        Call editdata(strupdate)
-        MsgBox("Data Terupdate!", vbInformation, "Information")
-        isigrid()
+        If tbnamabaju.Text = "" Or tbharga.Text = "" Then
+            MsgBox("Mohon lengkapi Data!", vbCritical, "Warning!")
+        Else
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            str = "SELECT * from tb_stok WHERE nama_baju = '" & tbnamabaju.Text & "'"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Nama Baju sudah ada, silahkan menginput data baru!", vbInformation, "Information")
+                tbnamabaju.Text = ""
+            Else
 
-        lbkodestok.Text = ""
-        tbnamabaju.Text = ""
-        ComboMerek.Text = ""
-        tbharga.Text = ""
-        ComboKategori.Text = ""
-        tbnamabaju.Focus()
+                Dim strupdate As String = "Update tb_stok set nama_baju = '" & tbnamabaju.Text & "', nama_merek = '" & ComboMerek.Text & "', harga = '" & tbharga.Text & "', kategori = '" & ComboKategori.Text & "' Where kode_baju = '" & lbkodestok.Text & "'"
+                Call editdata(strupdate)
+                MsgBox("Data Terupdate!", vbInformation, "Information")
+
+
+                isigrid()
+                lbkodestok.Text = ""
+                tbnamabaju.Text = ""
+                ComboMerek.Text = ""
+                tbharga.Text = ""
+                ComboKategori.Text = ""
+                tbnamabaju.Focus()
+            End If
+        End If
     End Sub
     Private Sub btrefresh_Click(sender As Object, e As EventArgs) Handles btrefresh.Click
         lbkodestok.Text = ""
@@ -41,44 +90,52 @@ Public Class FormStok
         tbharga.Text = ""
         ComboKategori.Text = ""
         tbserach.Text = ""
+        isigrid()
     End Sub
 
-    Sub seleksi()
-        Dim strtext As String = "Select * from tb_stok where nama_baju like '%" & tbserach.Text & "%' or nama_merek like '%" & tbserach.Text & "%' or kode_baju like '%" & tbserach.Text & "%' or kategori like '%" & tbserach.Text & "%'"
-        Using cmd2 As New MySqlCommand(strtext, konek)
-            Using adapter As New MySqlDataAdapter(cmd2)
-                Using DataSet As New DataSet()
-                    adapter.Fill(DataSet)
-                    DataGridView1.DataSource = DataSet.Tables(0)
-                    DataGridView1.ReadOnly = True
-                End Using
-            End Using
-        End Using
-    End Sub
+  
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        Me.Close()
+        Me.Hide()
         Form1.Show()
 
     End Sub
 
     Private Sub bthapus_Click(sender As Object, e As EventArgs) Handles bthapus.Click
-        If tbnamabaju.Text <> "" Or tbharga.Text <> "" Or ComboKategori.Text <> "" Or ComboMerek.Text <> "" Then
-            Dim strhapus As String = "DELETE FROM tb_stok WHERE kode_stok = '" & lbkodestok.Text & "'"
-            If MsgBox("Apakah Anda yakin ingin menghapus data?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
-                Call hapusdata(strhapus)
-                MsgBox("Data Berhasil Dihapus!", vbInformation, "Information")
-            End If
+        If tbnamabaju.Text <> "" And tbharga.Text <> "" And ComboKategori.Text <> "" And ComboMerek.Text <> "" Then
+            MsgBox("Pilih data terlebih dahulu!", vbCritical, "Error")
         Else
-            MsgBox("Input data terlebih dahulu!", vbCritical, "Error")
+            cmd = New Odbc.OdbcCommand
+            cmd.CommandType = CommandType.Text
+            cmd.Connection = conn
+            str = "SELECT * FROM tb_stok WHERE stok = 0"
+            cmd.CommandText = str
+            dr = cmd.ExecuteReader()
+            If dr.HasRows Then
+                MsgBox("Maaf, Data Baju ini tidak dapat dihapus karena stok masih tersedia!", vbInformation, "Information")
+                lbkodestok.Text = ""
+                tbnamabaju.Text = ""
+                tbharga.Text = ""
+                ComboKategori.Text = ""
+                ComboMerek.Text = ""
+            Else
+
+                Dim strhapus As String = "DELETE FROM tb_stok WHERE kode_stok = '" & lbkodestok.Text & "'"
+                If MsgBox("Apakah Anda yakin ingin menghapus data?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
+                    Call hapusdata(strhapus)
+                    MsgBox("Data Berhasil Dihapus!", vbInformation, "Information")
+                    isigrid()
+                    lbkodestok.Text = ""
+                    tbnamabaju.Text = ""
+                    tbharga.Text = ""
+                    ComboKategori.Text = ""
+                    ComboMerek.Text = ""
+                End If
+            End If
         End If
-        isigrid()
-
     End Sub
 
-    Private Sub tbserach_TextChanged(sender As Object, e As EventArgs) Handles tbserach.TextChanged
-        seleksi()
-    End Sub
+   
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
         FormTambahJenis.Show()
@@ -106,6 +163,44 @@ Public Class FormStok
     Private Sub tbnamabaju_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamabaju.KeyPress
         If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack) Then
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub FormStok_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
+    End Sub
+    Sub Cari(ByVal str As String)
+        Dim strtampil As String = str
+        Dim strtabel As String = "tb_stok"
+        Call tampildata(strtampil, strtabel)
+        DataGridView1.DataSource = (ds.Tables("tb_stok"))
+        DataGridView1.ReadOnly = True
+    End Sub
+
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        Call KonekDB()
+        cmd = New Odbc.OdbcCommand
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        str = "Select * from tb_stok where nama_baju like '%" & tbserach.Text & "%' or nama_merek like '%" & tbserach.Text & "%' or kode_baju like '%" & tbserach.Text & "%' or kategori like '%" & tbserach.Text & "%'"
+
+        cmd.CommandText = str
+        dr = cmd.ExecuteReader()
+        If dr.HasRows Then
+            Cari(str)
+        Else
+            Cari(str)
+            MsgBox("Maaf, data tidak ditemukan!", vbInformation, "Pesan")
+            tbserach.Text = ""
+
+
         End If
     End Sub
 End Class

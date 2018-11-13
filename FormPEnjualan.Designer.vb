@@ -23,6 +23,7 @@ Partial Class FormPEnjualan
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnext = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbstokawal = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -30,7 +31,6 @@ Partial Class FormPEnjualan
         Me.lbidbaju = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.lbtemp = New System.Windows.Forms.Label()
-        Me.btnext = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.tbjumlah = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -63,6 +63,7 @@ Partial Class FormPEnjualan
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.btnext)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lbstokawal)
         Me.GroupBox1.Controls.Add(Me.Button1)
@@ -70,7 +71,6 @@ Partial Class FormPEnjualan
         Me.GroupBox1.Controls.Add(Me.lbidbaju)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.lbtemp)
-        Me.GroupBox1.Controls.Add(Me.btnext)
         Me.GroupBox1.Controls.Add(Me.DataGridView2)
         Me.GroupBox1.Controls.Add(Me.tbjumlah)
         Me.GroupBox1.Controls.Add(Me.Label8)
@@ -92,12 +92,21 @@ Partial Class FormPEnjualan
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         '
+        'btnext
+        '
+        Me.btnext.Location = New System.Drawing.Point(1204, 109)
+        Me.btnext.Name = "btnext"
+        Me.btnext.Size = New System.Drawing.Size(75, 23)
+        Me.btnext.TabIndex = 28
+        Me.btnext.Text = "Next"
+        Me.btnext.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(926, 113)
+        Me.Label1.Location = New System.Drawing.Point(978, 113)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(110, 21)
         Me.Label1.TabIndex = 27
@@ -107,7 +116,7 @@ Partial Class FormPEnjualan
         '
         Me.lbstokawal.AutoSize = True
         Me.lbstokawal.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbstokawal.Location = New System.Drawing.Point(1042, 113)
+        Me.lbstokawal.Location = New System.Drawing.Point(1094, 113)
         Me.lbstokawal.Name = "lbstokawal"
         Me.lbstokawal.Size = New System.Drawing.Size(78, 21)
         Me.lbstokawal.TabIndex = 11
@@ -164,17 +173,6 @@ Partial Class FormPEnjualan
         Me.lbtemp.Text = "lbtemp"
         Me.lbtemp.Visible = False
         '
-        'btnext
-        '
-        Me.btnext.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnext.ForeColor = System.Drawing.Color.Black
-        Me.btnext.Location = New System.Drawing.Point(1185, 105)
-        Me.btnext.Name = "btnext"
-        Me.btnext.Size = New System.Drawing.Size(94, 27)
-        Me.btnext.TabIndex = 12
-        Me.btnext.Text = "Next"
-        Me.btnext.UseVisualStyleBackColor = True
-        '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -186,7 +184,7 @@ Partial Class FormPEnjualan
         'tbjumlah
         '
         Me.tbjumlah.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbjumlah.Location = New System.Drawing.Point(780, 108)
+        Me.tbjumlah.Location = New System.Drawing.Point(832, 108)
         Me.tbjumlah.Name = "tbjumlah"
         Me.tbjumlah.Size = New System.Drawing.Size(117, 28)
         Me.tbjumlah.TabIndex = 11
@@ -196,7 +194,7 @@ Partial Class FormPEnjualan
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
-        Me.Label8.Location = New System.Drawing.Point(688, 113)
+        Me.Label8.Location = New System.Drawing.Point(740, 113)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(86, 21)
         Me.Label8.TabIndex = 10
@@ -207,7 +205,7 @@ Partial Class FormPEnjualan
         Me.lbharga.AutoSize = True
         Me.lbharga.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbharga.ForeColor = System.Drawing.Color.Black
-        Me.lbharga.Location = New System.Drawing.Point(562, 110)
+        Me.lbharga.Location = New System.Drawing.Point(614, 110)
         Me.lbharga.Name = "lbharga"
         Me.lbharga.Size = New System.Drawing.Size(103, 21)
         Me.lbharga.TabIndex = 9
@@ -218,7 +216,7 @@ Partial Class FormPEnjualan
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Black
-        Me.Label6.Location = New System.Drawing.Point(476, 111)
+        Me.Label6.Location = New System.Drawing.Point(528, 111)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(80, 21)
         Me.Label6.TabIndex = 8
@@ -240,7 +238,7 @@ Partial Class FormPEnjualan
         Me.lbnamabaju.AutoSize = True
         Me.lbnamabaju.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbnamabaju.ForeColor = System.Drawing.Color.Black
-        Me.lbnamabaju.Location = New System.Drawing.Point(363, 111)
+        Me.lbnamabaju.Location = New System.Drawing.Point(415, 111)
         Me.lbnamabaju.Name = "lbnamabaju"
         Me.lbnamabaju.Size = New System.Drawing.Size(89, 21)
         Me.lbnamabaju.TabIndex = 7
@@ -251,7 +249,7 @@ Partial Class FormPEnjualan
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Black
-        Me.Label4.Location = New System.Drawing.Point(242, 111)
+        Me.Label4.Location = New System.Drawing.Point(294, 111)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(125, 21)
         Me.Label4.TabIndex = 6
@@ -273,7 +271,7 @@ Partial Class FormPEnjualan
         Me.lbkodebaju.AutoSize = True
         Me.lbkodebaju.Font = New System.Drawing.Font("Modern No. 20", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbkodebaju.ForeColor = System.Drawing.Color.Black
-        Me.lbkodebaju.Location = New System.Drawing.Point(1165, 553)
+        Me.lbkodebaju.Location = New System.Drawing.Point(224, 117)
         Me.lbkodebaju.Name = "lbkodebaju"
         Me.lbkodebaju.Size = New System.Drawing.Size(64, 15)
         Me.lbkodebaju.TabIndex = 5
@@ -453,7 +451,6 @@ Partial Class FormPEnjualan
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnext As System.Windows.Forms.Button
     Friend WithEvents tbjumlah As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents lbharga As System.Windows.Forms.Label
@@ -485,4 +482,5 @@ Partial Class FormPEnjualan
     Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
     Friend WithEvents lbstokawal As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnext As System.Windows.Forms.Button
 End Class

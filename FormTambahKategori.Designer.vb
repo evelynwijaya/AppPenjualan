@@ -37,7 +37,8 @@ Partial Class FormTambahKategori
         Me.kop.AutoSize = True
         Me.kop.BackColor = System.Drawing.Color.Transparent
         Me.kop.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.kop.Location = New System.Drawing.Point(547, 42)
+        Me.kop.Location = New System.Drawing.Point(593, 57)
+        Me.kop.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.kop.Name = "kop"
         Me.kop.Size = New System.Drawing.Size(264, 45)
         Me.kop.TabIndex = 3
@@ -48,7 +49,8 @@ Partial Class FormTambahKategori
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
         Me.Label4.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(319, 129)
+        Me.Label4.Location = New System.Drawing.Point(317, 190)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(186, 29)
         Me.Label4.TabIndex = 16
@@ -59,7 +61,8 @@ Partial Class FormTambahKategori
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Modern No. 20", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(315, 196)
+        Me.Label1.Location = New System.Drawing.Point(317, 293)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(196, 29)
         Me.Label1.TabIndex = 17
@@ -67,25 +70,30 @@ Partial Class FormTambahKategori
         '
         'tbkodekategori
         '
-        Me.tbkodekategori.Location = New System.Drawing.Point(552, 138)
+        Me.tbkodekategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbkodekategori.Location = New System.Drawing.Point(601, 190)
+        Me.tbkodekategori.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbkodekategori.Name = "tbkodekategori"
         Me.tbkodekategori.ReadOnly = True
-        Me.tbkodekategori.Size = New System.Drawing.Size(384, 20)
+        Me.tbkodekategori.Size = New System.Drawing.Size(574, 26)
         Me.tbkodekategori.TabIndex = 18
         '
         'tbnamakategori
         '
-        Me.tbnamakategori.Location = New System.Drawing.Point(552, 205)
+        Me.tbnamakategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbnamakategori.Location = New System.Drawing.Point(601, 293)
+        Me.tbnamakategori.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbnamakategori.Name = "tbnamakategori"
-        Me.tbnamakategori.Size = New System.Drawing.Size(384, 20)
+        Me.tbnamakategori.Size = New System.Drawing.Size(574, 26)
         Me.tbnamakategori.TabIndex = 19
         '
         'tbsimpan
         '
         Me.tbsimpan.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbsimpan.Location = New System.Drawing.Point(552, 288)
+        Me.tbsimpan.Location = New System.Drawing.Point(601, 386)
+        Me.tbsimpan.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tbsimpan.Name = "tbsimpan"
-        Me.tbsimpan.Size = New System.Drawing.Size(124, 46)
+        Me.tbsimpan.Size = New System.Drawing.Size(169, 54)
         Me.tbsimpan.TabIndex = 24
         Me.tbsimpan.Text = "SIMPAN"
         Me.tbsimpan.UseVisualStyleBackColor = True
@@ -93,21 +101,22 @@ Partial Class FormTambahKategori
         'bttutup
         '
         Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bttutup.Location = New System.Drawing.Point(701, 288)
+        Me.bttutup.Location = New System.Drawing.Point(825, 386)
+        Me.bttutup.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(118, 46)
+        Me.bttutup.Size = New System.Drawing.Size(161, 54)
         Me.bttutup.TabIndex = 25
         Me.bttutup.Text = "TUTUP"
         Me.bttutup.UseVisualStyleBackColor = True
         '
         'FormTambahKategori
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1304, 610)
+        Me.ClientSize = New System.Drawing.Size(1362, 741)
         Me.Controls.Add(Me.bttutup)
         Me.Controls.Add(Me.tbsimpan)
         Me.Controls.Add(Me.tbnamakategori)
@@ -115,6 +124,8 @@ Partial Class FormTambahKategori
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.kop)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.Name = "FormTambahKategori"
         Me.Text = "FormTambahKategori"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

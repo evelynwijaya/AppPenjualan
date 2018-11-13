@@ -89,7 +89,18 @@ Public Class Laporan
     End Sub
 
     Private Sub btntutup_Click(sender As Object, e As EventArgs) Handles btntutup.Click
-        Me.Close()
+        Me.Hide()
         Form1.Show()
+    End Sub
+
+    Private Sub Laporan_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Dim dialog As DialogResult
+        dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
+        If dialog = Windows.Forms.DialogResult.No Then
+            e.Cancel = True
+        Else
+            Application.ExitThread()
+
+        End If
     End Sub
 End Class

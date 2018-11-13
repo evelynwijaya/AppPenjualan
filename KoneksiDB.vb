@@ -1,9 +1,7 @@
 ﻿Imports System.Data
 Imports System.Data.Odbc
-Imports MySql.Data.MySqlClient
 
 Module KoneksiDB
-    Public strkon As String = "server=localhost;user=root;database=tokobaju"
 
     Public conn As OdbcConnection
     Public da As OdbcDataAdapter
@@ -12,11 +10,7 @@ Module KoneksiDB
     Public ds2 As DataSet
     Public cmd As OdbcCommand
     Public dr As OdbcDataReader
-    Public konek As MySqlConnection = New MySqlConnection(strkon)
-    Public da3 As MySqlDataAdapter
     Public conn2 As OdbcConnection
-    Public cmd2 As New MySqlCommand
-    Public dr2 As MySqlDataReader
     Public str As String
     Public Sub KonekDB()
         Try
@@ -30,19 +24,6 @@ Module KoneksiDB
         End Try
     End Sub
 
-    Public Function koneksi() As Boolean
-        Try
-            If konek.State = ConnectionState.Closed Then
-                konek.Open()
-                Return True
-            Else
-                Return False
-            End If
-        Catch ex As Exception
-            MsgBox("Koneksi Database Bermasalah, Periksa Koneksi Jaringan..", 48, "Perhatian")
-            Return False
-        End Try
-    End Function
 
     Sub tampildata(ByVal sqldata As String, ByVal sqltabel As String)
         Try

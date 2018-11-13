@@ -38,18 +38,6 @@ Public Class DataBaju
         DataGridView1.Columns(3).Width = "310"
     End Sub
 
-    Sub seleksi()
-        Dim strtext As String = "Select * from tb_stok where nama_baju like '%" & tbsearch.Text & "%' or harga like '%" & tbsearch.Text & "%' or kode_baju like '%" & tbsearch.Text & "%'"
-        Using cmd2 As New MySqlCommand(strtext, konek)
-            Using adapter As New MySqlDataAdapter(cmd2)
-                Using DataSet As New DataSet()
-                    adapter.Fill(DataSet)
-                    DataGridView1.DataSource = DataSet.Tables(0)
-                    DataGridView1.ReadOnly = True
-                End Using
-            End Using
-        End Using
-    End Sub
 
     Sub ambildata()
         DataGridView1.Refresh()
@@ -73,7 +61,35 @@ Public Class DataBaju
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Me.Close()
+        Me.Hide()
         FormPEnjualan.Show()
     End Sub
+    Sub Cari(ByVal str As String)
+        Dim strtampil As String = str
+        Dim strtabel As String = "tb_stok"
+        Call tampildata(strtampil, strtabel)
+        DataGridView1.DataSource = (ds.Tables("tb_stok"))
+        DataGridView1.ReadOnly = True
+    End Sub
+
+    Private Sub tbcari_Click(sender As Object, e As EventArgs) Handles tbcari.Click
+        Call KonekDB()
+        cmd = New Odbc.OdbcCommand
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        str = "Select * from tb_stok where nama_baju like '%" & tbsearch.Text & "%' or harga like '%" & tbsearch.Text & "%' or kode_baju like '%" & tbsearch.Text & "%'"
+
+        cmd.CommandText = str
+        dr = cmd.ExecuteReader()
+        If dr.HasRows Then
+            Cari(str)
+        Else
+            Cari(str)
+            MsgBox("Maaf, data tidak ditemukan!", vbInformation, "Pesan")
+            tbcari.Text = ""
+            judulgrid()
+
+        End If
+    End Sub
+
 End Class

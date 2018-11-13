@@ -35,72 +35,80 @@ Partial Class Laporan
         '
         'ComboLaporan
         '
+        Me.ComboLaporan.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboLaporan.FormattingEnabled = True
-        Me.ComboLaporan.Location = New System.Drawing.Point(82, 37)
+        Me.ComboLaporan.Location = New System.Drawing.Point(503, 108)
         Me.ComboLaporan.Name = "ComboLaporan"
-        Me.ComboLaporan.Size = New System.Drawing.Size(216, 21)
+        Me.ComboLaporan.Size = New System.Drawing.Size(320, 32)
         Me.ComboLaporan.TabIndex = 0
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(110, 16)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Monotype Corsiva", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(514, 60)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(136, 18)
+        Me.Label1.Size = New System.Drawing.Size(296, 45)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Pilih Jenis Laporan"
         '
         'DAwal
         '
-        Me.DAwal.Location = New System.Drawing.Point(82, 115)
+        Me.DAwal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DAwal.Location = New System.Drawing.Point(503, 229)
         Me.DAwal.Name = "DAwal"
-        Me.DAwal.Size = New System.Drawing.Size(216, 20)
+        Me.DAwal.Size = New System.Drawing.Size(320, 26)
         Me.DAwal.TabIndex = 3
         Me.DAwal.Value = New Date(2018, 10, 6, 0, 0, 0, 0)
         '
         'DAkhir
         '
         Me.DAkhir.CustomFormat = "yyyy-MM-dd"
-        Me.DAkhir.Location = New System.Drawing.Point(82, 178)
+        Me.DAkhir.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DAkhir.Location = New System.Drawing.Point(503, 353)
         Me.DAkhir.Name = "DAkhir"
-        Me.DAkhir.Size = New System.Drawing.Size(216, 20)
+        Me.DAkhir.Size = New System.Drawing.Size(320, 26)
         Me.DAkhir.TabIndex = 3
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(79, 94)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Monotype Corsiva", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(502, 190)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(99, 18)
+        Me.Label2.Size = New System.Drawing.Size(172, 36)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Tanggal Awal"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(79, 157)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Monotype Corsiva", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(502, 314)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(101, 18)
+        Me.Label3.Size = New System.Drawing.Size(176, 36)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Tanggal Akhir"
         '
         'btn_ok
         '
-        Me.btn_ok.Location = New System.Drawing.Point(82, 228)
+        Me.btn_ok.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ok.Location = New System.Drawing.Point(503, 434)
         Me.btn_ok.Name = "btn_ok"
-        Me.btn_ok.Size = New System.Drawing.Size(75, 23)
+        Me.btn_ok.Size = New System.Drawing.Size(147, 37)
         Me.btn_ok.TabIndex = 6
         Me.btn_ok.Text = "OK"
         Me.btn_ok.UseVisualStyleBackColor = True
         '
         'btntutup
         '
-        Me.btntutup.Location = New System.Drawing.Point(223, 228)
+        Me.btntutup.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntutup.Location = New System.Drawing.Point(696, 434)
         Me.btntutup.Name = "btntutup"
-        Me.btntutup.Size = New System.Drawing.Size(75, 23)
+        Me.btntutup.Size = New System.Drawing.Size(127, 37)
         Me.btntutup.TabIndex = 8
         Me.btntutup.Text = "Tutup"
         Me.btntutup.UseVisualStyleBackColor = True
@@ -110,7 +118,8 @@ Partial Class Laporan
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
-        Me.ClientSize = New System.Drawing.Size(397, 284)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1327, 659)
         Me.Controls.Add(Me.btntutup)
         Me.Controls.Add(Me.btn_ok)
         Me.Controls.Add(Me.Label3)
@@ -121,6 +130,7 @@ Partial Class Laporan
         Me.Controls.Add(Me.ComboLaporan)
         Me.Name = "Laporan"
         Me.Text = "Laporan"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

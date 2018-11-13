@@ -44,6 +44,7 @@ Partial Class FormStok
         Me.btnTambah = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btncari = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -207,7 +208,7 @@ Partial Class FormStok
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Times New Roman", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Chocolate
-        Me.Label3.Location = New System.Drawing.Point(21, 58)
+        Me.Label3.Location = New System.Drawing.Point(21, 63)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(88, 31)
         Me.Label3.TabIndex = 5
@@ -215,9 +216,10 @@ Partial Class FormStok
         '
         'tbserach
         '
+        Me.tbserach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbserach.Location = New System.Drawing.Point(115, 68)
         Me.tbserach.Name = "tbserach"
-        Me.tbserach.Size = New System.Drawing.Size(1224, 20)
+        Me.tbserach.Size = New System.Drawing.Size(1102, 26)
         Me.tbserach.TabIndex = 6
         '
         'btrefresh
@@ -285,12 +287,22 @@ Partial Class FormStok
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Data Stok"
         '
+        'btncari
+        '
+        Me.btncari.Location = New System.Drawing.Point(1231, 63)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(106, 35)
+        Me.btncari.TabIndex = 15
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
         'FormStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1361, 598)
+        Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.btnTambah)
@@ -334,4 +346,5 @@ Partial Class FormStok
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents btncari As System.Windows.Forms.Button
 End Class
