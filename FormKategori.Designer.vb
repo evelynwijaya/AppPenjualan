@@ -57,9 +57,9 @@ Partial Class FormKategori
         '
         Me.btRefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btRefresh.ForeColor = System.Drawing.Color.Chocolate
-        Me.btRefresh.Location = New System.Drawing.Point(1229, 27)
+        Me.btRefresh.Location = New System.Drawing.Point(1231, 27)
         Me.btRefresh.Name = "btRefresh"
-        Me.btRefresh.Size = New System.Drawing.Size(121, 45)
+        Me.btRefresh.Size = New System.Drawing.Size(119, 45)
         Me.btRefresh.TabIndex = 5
         Me.btRefresh.TabStop = False
         Me.btRefresh.Text = "Refresh"

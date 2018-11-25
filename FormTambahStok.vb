@@ -1,9 +1,12 @@
 ﻿Imports System.Data.Odbc
 Public Class FormTambahStok
 
-    Private Sub FormTambahStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormTambahStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         isigrid()
         judulgrid()
+        tbserach.Text = ""
+        tbjumlah.Text = ""
+        DateTimePicker1.Value = Now
     End Sub
 
     Sub isigrid()
@@ -56,6 +59,7 @@ Public Class FormTambahStok
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Hide()
+        btrefresh_Click(sender, e)
         FormStok.Show()
     End Sub
 
@@ -118,6 +122,7 @@ Public Class FormTambahStok
         lbkodestok.Text = ""
         tbserach.Text = ""
         tbjumlah.Text = ""
+        DateTimePicker1.Value = Now
         isigrid()
     End Sub
 End Class

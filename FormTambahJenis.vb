@@ -1,10 +1,13 @@
 ﻿Imports System.Data.Odbc
 Public Class FormTambahJenis
-    Private Sub FormTambahStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormTambahStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         isimerek()
         isikategosi()
         autokode()
         ComboKategori.Text = ""
+        tbharga.Text = ""
+
+        tbnamabaju.Text = ""
         ComboMerek.Text = ""
         tbnamabaju.Focus()
     End Sub
@@ -91,6 +94,8 @@ Public Class FormTambahJenis
 
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+
+        FormTambahStok_Load(sender, e)
         Me.Hide()
         FormStok.Show()
     End Sub

@@ -1,7 +1,7 @@
 ﻿Imports CrystalDecisions.CrystalReports.Engine
 Public Class Laporan
 
-    Private Sub Laporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub Laporan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ComboLaporan.Items.Clear()
         ComboLaporan.Items.Add("Laporan Stok")
         ComboLaporan.Items.Add("Laporan Penjualan Periodik")
@@ -89,6 +89,9 @@ Public Class Laporan
     End Sub
 
     Private Sub btntutup_Click(sender As Object, e As EventArgs) Handles btntutup.Click
+        ComboLaporan.Text = ""
+        DAwal.Value = Now
+        DAkhir.Value = Now
         Me.Hide()
         Form1.Show()
     End Sub

@@ -33,7 +33,7 @@ Public Class FormPEnjualan
         DataGridView2.Columns(3).HeaderText = "Jumlah"
         DataGridView2.Columns(4).Visible = False
         DataGridView2.Columns(5).HeaderText = "Harga"
-        DataGridView2.Columns(6).HeaderText = "Total"
+        DataGridView2.Columns(6).HeaderText = "SUbtotal"
 
         DataGridView2.Columns(0).Width = "200"
         DataGridView2.Columns(1).Width = "200"
@@ -118,9 +118,9 @@ Public Class FormPEnjualan
             lbnamabaju.Text = DataGridView2.Item(2, i).Value
             tbjumlah.Text = DataGridView2.Item(3, i).Value
             lbharga.Text = DataGridView2.Item(5, i).Value
-
-            Dim strsimpan2 As String = "Insert into tb_detail ( id_transaksi , kode_baju , nama_baju , jumlah , harga , diskon) " _
-                                       & "Value ('" & lbidtransaksi.Text & "','" & lbkodebaju.Text & "','" & lbnamabaju.Text & "','" & tbjumlah.Text & "','" & lbharga.Text & "','" & lbdiscount.Text & "')"
+            Dim subtotal As Integer = DataGridView2.Item(6, i).Value
+            Dim strsimpan2 As String = "Insert into tb_detail ( id_transaksi , kode_baju , nama_baju , jumlah , harga , diskon, subtotal, total) " _
+                                       & "Value ('" & lbidtransaksi.Text & "','" & lbkodebaju.Text & "','" & lbnamabaju.Text & "','" & tbjumlah.Text & "','" & lbharga.Text & "','" & lbdiscount.Text & "','" & subtotal & "','" & tbtotal.Text & "')"
             Call simpandata(strsimpan2)
 
         Next
@@ -185,13 +185,14 @@ Public Class FormPEnjualan
     
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
         If DataGridView2.RowCount <= 1 Then
+            btrefresh_Click(sender, e)
             Me.Hide()
             Form1.Show()
 
         ElseIf MsgBox("Transaksi belum selesai! Apakah anda yakin ingin keluar?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
             Dim kodebaju As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(1).Value()
             Dim idtransaksi As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(0).Value()
-            
+
             Dim i As Integer
             For i = 0 To DataGridView2.RowCount - 2
                 lbkodebaju.Text = DataGridView2.Item(1, i).Value
@@ -283,12 +284,12 @@ Public Class FormPEnjualan
                 Dim Stok As Integer
                 Stok = SAwal - JAwal
                 Dim tambah As Integer = tbjumlah.Text + Bawal
-                Dim total As Integer = tambah * lbharga.Text
+                Dim subtotal As Integer = tambah * lbharga.Text
 
                 If JAwal > SAwal Then
                     MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
                 Else
-                    Dim strupdate1 As String = "Update tb_sementara set jumlah = '" & tambah & "', total = '" & total & "' where id_transaksi = '" & lbidtransaksi.Text & "' and kode_baju = '" & lbkodebaju.Text & "'"
+                    Dim strupdate1 As String = "Update tb_sementara set jumlah = '" & tambah & "', subtotal = '" & subtotal & "'where id_transaksi = '" & lbidtransaksi.Text & "' and kode_baju = '" & lbkodebaju.Text & "'"
                     Call editdata(strupdate1)
 
                     Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"
@@ -321,9 +322,9 @@ Public Class FormPEnjualan
                     MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
                 Else
                     Stok = SAwal - JAwal
-                    Dim total As Integer = tbjumlah.Text * lbharga.Text
-                    Dim strsimpan As String = "Insert into tb_sementara ( id_transaksi , kode_baju , nama_baju , jumlah , harga , total , stokawal ) " _
-                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & total & "', '" & Stok & "')"
+                    Dim subtotal As Integer = tbjumlah.Text * lbharga.Text
+                    Dim strsimpan As String = "Insert into tb_sementara ( id_transaksi , kode_baju , nama_baju , jumlah , harga , subtotal , stokawal ) " _
+                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & subtotal & "', '" & Stok & "')"
                     Call simpandata(strsimpan)
 
                     Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"

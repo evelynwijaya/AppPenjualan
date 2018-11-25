@@ -1,6 +1,13 @@
 ﻿Imports System.Data.Odbc
 Public Class FormStok
-    Private Sub FormStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        lbkodestok.Text = ""
+        tbnamabaju.Text = ""
+        ComboMerek.Text = ""
+        tbharga.Text = ""
+        ComboKategori.Text = ""
+        tbserach.Text = ""
+
         isigrid()
         isikategosi()
         isimerek()
@@ -49,7 +56,7 @@ Public Class FormStok
         lbkodestok.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value()
         tbnamabaju.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(1).Value()
         ComboMerek.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value()
-        tbharga.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(4).Value()
+        tbharga.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
         ComboKategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(5).Value()
     End Sub
 
@@ -96,31 +103,24 @@ Public Class FormStok
   
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        btrefresh_Click(sender, e)
         Me.Hide()
         Form1.Show()
 
     End Sub
 
     Private Sub bthapus_Click(sender As Object, e As EventArgs) Handles bthapus.Click
-        If tbnamabaju.Text <> "" And tbharga.Text <> "" And ComboKategori.Text <> "" And ComboMerek.Text <> "" Then
+        If tbnamabaju.Text = "" And tbharga.Text = "" And ComboKategori.Text = "" And ComboMerek.Text = "" Then
             MsgBox("Pilih data terlebih dahulu!", vbCritical, "Error")
         Else
             cmd = New Odbc.OdbcCommand
             cmd.CommandType = CommandType.Text
             cmd.Connection = conn
-            str = "SELECT * FROM tb_stok WHERE stok = 0"
+            str = "SELECT * FROM tb_stok WHERE stok=0 and kode_baju = '" & lbkodestok.Text & "'"
             cmd.CommandText = str
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
-                MsgBox("Maaf, Data Baju ini tidak dapat dihapus karena stok masih tersedia!", vbInformation, "Information")
-                lbkodestok.Text = ""
-                tbnamabaju.Text = ""
-                tbharga.Text = ""
-                ComboKategori.Text = ""
-                ComboMerek.Text = ""
-            Else
-
-                Dim strhapus As String = "DELETE FROM tb_stok WHERE kode_stok = '" & lbkodestok.Text & "'"
+                Dim strhapus As String = "DELETE FROM tb_stok WHERE kode_baju = '" & lbkodestok.Text & "'"
                 If MsgBox("Apakah Anda yakin ingin menghapus data?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Question") = MsgBoxResult.Yes Then
                     Call hapusdata(strhapus)
                     MsgBox("Data Berhasil Dihapus!", vbInformation, "Information")
@@ -131,6 +131,8 @@ Public Class FormStok
                     ComboKategori.Text = ""
                     ComboMerek.Text = ""
                 End If
+            Else
+                MsgBox("Maaf Data Tidak bisa di hapus karena stok masih tersedia!", vbInformation, "Information")
             End If
         End If
     End Sub
@@ -138,11 +140,13 @@ Public Class FormStok
    
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        ' FormTambahJenis.FormTambahStok_Load(sender, e)
         FormTambahJenis.Show()
         Me.Hide()
     End Sub
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
+        'FormTambahStok.FormTambahStok_Load(sender, e)
         FormTambahStok.Show()
         Me.Hide()
 

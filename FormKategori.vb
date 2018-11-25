@@ -1,7 +1,10 @@
 ﻿Imports System.Data.Odbc
 Public Class FormKategori
 
-    Private Sub FormKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tbsearch.Text = ""
+        tbnamakategori.Text = ""
+        tbkodekategori.Text = ""
         isigridkategori()
         judulgrid()
     End Sub
@@ -76,6 +79,7 @@ Public Class FormKategori
     End Sub
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        btRefresh_Click(sender, e)
         Me.Hide()
         Form1.Show()
     End Sub
@@ -110,7 +114,9 @@ Public Class FormKategori
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        ' FormTambahKategori.FormTambahKategori_Load(sender, e)
         FormTambahKategori.Show()
+        Me.Hide()
     End Sub
 
     Private Sub tbsearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbsearch.KeyPress

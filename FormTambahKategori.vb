@@ -45,12 +45,13 @@
     End Sub
 
 
-    Private Sub FormTambahKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormTambahKategori_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         autokode()
-
+        tbnamakategori.Text = ""
     End Sub
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        FormTambahKategori_Load(sender, e)
         Me.Hide()
         FormKategori.Show()
 

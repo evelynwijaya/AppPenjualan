@@ -1,9 +1,11 @@
 ﻿Imports System.Data.Odbc
 
 Public Class FormMerek
-    Private Sub FormMerek_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormMerek_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         isigridmerek()
         judulgrid()
+        tbkodemerek.Text = ""
+        tbnamamerek.Text = ""
         tbcari.Focus()
     End Sub
 
@@ -74,6 +76,7 @@ Public Class FormMerek
 
     
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        btRefresh_Click(sender, e)
         Me.Hide()
         Form1.Show()
 
@@ -110,6 +113,7 @@ Public Class FormMerek
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
+        ' FormTambahDataMerek.FormTambahDataMerek_Load(sender, e)
         FormTambahDataMerek.Show()
         Me.Hide()
     End Sub

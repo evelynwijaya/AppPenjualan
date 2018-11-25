@@ -1,10 +1,10 @@
 ﻿Imports System.Data.Odbc
 Public Class FormTambahDataMerek
 
-    Private Sub FormTambahDataMerek_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Public Sub FormTambahDataMerek_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         autokode()
         tbnamamerek.Focus()
-
+        tbnamamerek.Text = ""
     End Sub
 
     Sub autokode()
@@ -53,6 +53,7 @@ Public Class FormTambahDataMerek
     End Sub
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        FormTambahDataMerek_Load(sender, e)
         Me.Hide()
         FormMerek.Show()
     End Sub

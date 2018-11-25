@@ -39,16 +39,19 @@ Public Class Form1
     End Sub
 
     Private Sub KategoriToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles KategoriToolStripMenuItem.Click
+        '  FormKategori.FormKategori_Load(sender, e)
         FormKategori.Show()
         Me.Hide()
     End Sub
 
     Private Sub MerekToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MerekToolStripMenuItem.Click
+        ' FormMerek.FormMerek_Load(sender, e)
         FormMerek.Show()
         Me.Hide()
     End Sub
 
     Private Sub StokToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StokToolStripMenuItem.Click
+        ' FormStok.FormStok_Load(sender, e)
         FormStok.Show()
         Me.Hide()
     End Sub
@@ -69,7 +72,8 @@ Public Class Form1
         Me.Hide()
     End Sub
 
-    Private Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DetailTransaksiToolStripMenuItem.Click
+    Public Sub DetailTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DetailTransaksiToolStripMenuItem.Click
+        DetailTransaksi.DetailTransaksi_Load(sender, e)
         DetailTransaksi.Show()
         Me.Hide()
     End Sub
