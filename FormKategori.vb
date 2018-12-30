@@ -47,6 +47,7 @@ Public Class FormKategori
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         tbkodekategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value
         tbnamakategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(1).Value
+        tbnamakategori.Focus()
     End Sub
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
@@ -56,7 +57,7 @@ Public Class FormKategori
             cmd = New Odbc.OdbcCommand
             cmd.CommandType = CommandType.Text
             cmd.Connection = conn
-            str = "SELECT * from tb_kategori WHERE nama_kategori = '" & tbnamakategori.Text & "'"
+            str = "SELECT * from tb_kategori WHERE kategori = '" & tbnamakategori.Text & "'"
             cmd.CommandText = str
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
@@ -126,7 +127,7 @@ Public Class FormKategori
     End Sub
 
     Private Sub tbnamakategori_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamakategori.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
@@ -160,5 +161,13 @@ Public Class FormKategori
             judulgrid()
 
         End If
+    End Sub
+
+    Private Sub tbnamakategori_Leave(sender As Object, e As EventArgs) Handles tbnamakategori.Leave
+        btupdate.Focus()
+    End Sub
+
+    Private Sub btupdate_Leave(sender As Object, e As EventArgs) Handles btupdate.Leave
+        bthapus.Focus()
     End Sub
 End Class

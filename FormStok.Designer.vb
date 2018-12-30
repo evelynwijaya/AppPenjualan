@@ -96,6 +96,7 @@ Partial Class FormStok
         '
         'ComboKategori
         '
+        Me.ComboKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboKategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboKategori.FormattingEnabled = True
         Me.ComboKategori.Location = New System.Drawing.Point(167, 246)
@@ -105,6 +106,7 @@ Partial Class FormStok
         '
         'ComboMerek
         '
+        Me.ComboMerek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboMerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMerek.FormattingEnabled = True
         Me.ComboMerek.Location = New System.Drawing.Point(167, 143)
@@ -224,6 +226,7 @@ Partial Class FormStok
         '
         'btrefresh
         '
+        Me.btrefresh.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btrefresh.ForeColor = System.Drawing.Color.Chocolate
         Me.btrefresh.Location = New System.Drawing.Point(1231, 20)
         Me.btrefresh.Name = "btrefresh"
@@ -289,6 +292,7 @@ Partial Class FormStok
         '
         'btncari
         '
+        Me.btncari.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btncari.Location = New System.Drawing.Point(1231, 63)
         Me.btncari.Name = "btncari"
         Me.btncari.Size = New System.Drawing.Size(106, 35)

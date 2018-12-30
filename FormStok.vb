@@ -58,6 +58,7 @@ Public Class FormStok
         ComboMerek.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value()
         tbharga.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
         ComboKategori.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(5).Value()
+        tbnamabaju.Focus()
     End Sub
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
@@ -140,7 +141,7 @@ Public Class FormStok
    
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        ' FormTambahJenis.FormTambahStok_Load(sender, e)
+        'FormTambahJenis.FormTambahStok_Load(sender, e)
         FormTambahJenis.Show()
         Me.Hide()
     End Sub
@@ -159,13 +160,13 @@ Public Class FormStok
     End Sub
 
     Private Sub tbserach_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbserach.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9") Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
 
     Private Sub tbnamabaju_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamabaju.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
@@ -206,5 +207,25 @@ Public Class FormStok
 
 
         End If
+    End Sub
+
+    Private Sub tbnamabaju_Leave(sender As Object, e As EventArgs) Handles tbnamabaju.Leave
+        ComboMerek.Focus()
+    End Sub
+
+    Private Sub ComboMerek_Leave(sender As Object, e As EventArgs) Handles ComboMerek.Leave
+        tbharga.Focus()
+    End Sub
+
+    Private Sub tbharga_Leave(sender As Object, e As EventArgs) Handles tbharga.Leave
+        ComboKategori.Focus()
+    End Sub
+
+    Private Sub ComboKategori_Leave(sender As Object, e As EventArgs) Handles ComboKategori.Leave
+        btupdate.Focus()
+    End Sub
+
+    Private Sub btupdate_Leave(sender As Object, e As EventArgs) Handles btupdate.Leave
+        bthapus.Focus()
     End Sub
 End Class

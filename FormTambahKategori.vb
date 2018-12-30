@@ -7,7 +7,7 @@
             cmd = New Odbc.OdbcCommand
             cmd.CommandType = CommandType.Text
             cmd.Connection = conn
-            str = "SELECT * from tb_kategori WHERE nama_kategori = '" & tbnamakategori.Text & "'"
+            str = "SELECT * from tb_kategori WHERE kategori = '" & tbnamakategori.Text & "'"
             cmd.CommandText = str
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
@@ -23,6 +23,7 @@
                 autokode()
                 tbnamakategori.Text = ""
                 FormKategori.isigridkategori()
+
             End If
         End If
     End Sub
@@ -65,6 +66,12 @@
         Else
             Application.ExitThread()
 
+        End If
+    End Sub
+
+    Private Sub tbnamakategori_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamakategori.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or Char.IsWhiteSpace(e.KeyChar)) Then
+            e.Handled = True
         End If
     End Sub
 End Class

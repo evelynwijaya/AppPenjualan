@@ -119,7 +119,7 @@ Public Class FormMerek
     End Sub
 
     Private Sub tbcari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbcari.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9") Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
@@ -159,6 +159,12 @@ Public Class FormMerek
             tbcari.Text = ""
             judulgrid()
 
+        End If
+    End Sub
+
+    Private Sub tbnamamerek_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamamerek.KeyPress
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9") Or Char.IsWhiteSpace(e.KeyChar)) Then
+            e.Handled = True
         End If
     End Sub
 End Class

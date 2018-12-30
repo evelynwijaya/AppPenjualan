@@ -26,7 +26,7 @@ Partial Class FormPEnjualan
         Me.btnext = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbstokawal = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btpilih = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbidbaju = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -66,7 +66,7 @@ Partial Class FormPEnjualan
         Me.GroupBox1.Controls.Add(Me.btnext)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.lbstokawal)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.btpilih)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.lbidbaju)
         Me.GroupBox1.Controls.Add(Me.Label15)
@@ -122,14 +122,14 @@ Partial Class FormPEnjualan
         Me.lbstokawal.TabIndex = 11
         Me.lbstokawal.Text = "stokawal"
         '
-        'Button1
+        'btpilih
         '
-        Me.Button1.Location = New System.Drawing.Point(151, 111)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Pilih"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btpilih.Location = New System.Drawing.Point(151, 111)
+        Me.btpilih.Name = "btpilih"
+        Me.btpilih.Size = New System.Drawing.Size(75, 23)
+        Me.btpilih.TabIndex = 25
+        Me.btpilih.Text = "Pilih"
+        Me.btpilih.UseVisualStyleBackColor = True
         '
         'Label3
         '
@@ -463,7 +463,7 @@ Partial Class FormPEnjualan
     Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lbtemp As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btpilih As System.Windows.Forms.Button
     Friend WithEvents lbidbaju As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView

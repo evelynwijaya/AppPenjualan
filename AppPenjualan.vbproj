@@ -144,6 +144,12 @@
     <Compile Include="FormTambahDataMerek.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormTambahDataMerek2.Designer.vb">
+      <DependentUpon>FormTambahDataMerek2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahDataMerek2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormTambahKategori.Designer.vb">
       <DependentUpon>FormTambahKategori.vb</DependentUpon>
     </Compile>
@@ -154,6 +160,12 @@
       <DependentUpon>FormTambahJenis.vb</DependentUpon>
     </Compile>
     <Compile Include="FormTambahJenis.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahKategori2.Designer.vb">
+      <DependentUpon>FormTambahKategori2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahKategori2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTambahStok.Designer.vb">
@@ -246,11 +258,17 @@
     <EmbeddedResource Include="FormTambahDataMerek.resx">
       <DependentUpon>FormTambahDataMerek.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahDataMerek2.resx">
+      <DependentUpon>FormTambahDataMerek2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTambahKategori.resx">
       <DependentUpon>FormTambahKategori.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahJenis.resx">
       <DependentUpon>FormTambahJenis.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahKategori2.resx">
+      <DependentUpon>FormTambahKategori2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahStok.resx">
       <DependentUpon>FormTambahStok.vb</DependentUpon>

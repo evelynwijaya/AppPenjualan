@@ -29,8 +29,8 @@ Public Class Laporan
                 LaporanCrystalReport.Show()
                 Dim report As New ReportDocument
                 report.Load("..\..\LaporanStok.rpt")
-                report.SetParameterValue("tgl_awal", tglawal)
-                report.SetParameterValue("tgl_akhir", tglakhir)
+                'report.SetParameterValue("tgl_awal", tglawal)
+                'report.SetParameterValue("tgl_akhir", tglakhir)
                 LaporanCrystalReport.CrystalReportViewer1.ReportSource = report
                 LaporanCrystalReport.CrystalReportViewer1.Refresh()
             Else
@@ -103,6 +103,17 @@ Public Class Laporan
             e.Cancel = True
         Else
             Application.ExitThread()
+
+        End If
+    End Sub
+
+    Private Sub ComboLaporan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboLaporan.SelectedIndexChanged
+        If ComboLaporan.SelectedIndex = 0 Then
+            DAwal.Enabled = False
+            DAkhir.Enabled = False
+        Else
+            DAwal.Enabled = True
+            DAkhir.Enabled = True
 
         End If
     End Sub

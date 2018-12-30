@@ -35,6 +35,7 @@ Partial Class Laporan
         '
         'ComboLaporan
         '
+        Me.ComboLaporan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboLaporan.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboLaporan.FormattingEnabled = True
         Me.ComboLaporan.Location = New System.Drawing.Point(503, 108)

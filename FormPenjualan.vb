@@ -227,7 +227,7 @@ Public Class FormPEnjualan
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btpilih.Click
         DataBaju.Show()
     End Sub
 
@@ -348,5 +348,17 @@ Public Class FormPEnjualan
                 End If
             End If
         End If
+    End Sub
+
+    Private Sub Button1_Leave(sender As Object, e As EventArgs) Handles btpilih.Leave
+        tbjumlah.Focus()
+    End Sub
+
+    Private Sub tbjumlah_Leave(sender As Object, e As EventArgs) Handles tbjumlah.Leave
+        btnext.Focus()
+    End Sub
+
+    Private Sub btnext_Leave(sender As Object, e As EventArgs) Handles btnext.Leave
+
     End Sub
 End Class

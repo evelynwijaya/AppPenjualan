@@ -37,6 +37,8 @@ Partial Class FormTambahJenis
         Me.bttutup = New System.Windows.Forms.Button()
         Me.Harga = New System.Windows.Forms.Label()
         Me.tbharga = New System.Windows.Forms.TextBox()
+        Me.btntambahmerek = New System.Windows.Forms.Button()
+        Me.btntambahkategori = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'kop
@@ -138,6 +140,7 @@ Partial Class FormTambahJenis
         '
         'ComboMerek
         '
+        Me.ComboMerek.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboMerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboMerek.FormattingEnabled = True
         Me.ComboMerek.Location = New System.Drawing.Point(537, 311)
@@ -147,6 +150,7 @@ Partial Class FormTambahJenis
         '
         'ComboKategori
         '
+        Me.ComboKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboKategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboKategori.FormattingEnabled = True
         Me.ComboKategori.Location = New System.Drawing.Point(537, 360)
@@ -185,6 +189,28 @@ Partial Class FormTambahJenis
         Me.tbharga.Size = New System.Drawing.Size(499, 26)
         Me.tbharga.TabIndex = 34
         '
+        'btntambahmerek
+        '
+        Me.btntambahmerek.BackColor = System.Drawing.Color.Chocolate
+        Me.btntambahmerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntambahmerek.Location = New System.Drawing.Point(1042, 306)
+        Me.btntambahmerek.Name = "btntambahmerek"
+        Me.btntambahmerek.Size = New System.Drawing.Size(34, 35)
+        Me.btntambahmerek.TabIndex = 35
+        Me.btntambahmerek.Text = "+"
+        Me.btntambahmerek.UseVisualStyleBackColor = False
+        '
+        'btntambahkategori
+        '
+        Me.btntambahkategori.BackColor = System.Drawing.Color.Chocolate
+        Me.btntambahkategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntambahkategori.Location = New System.Drawing.Point(1042, 360)
+        Me.btntambahkategori.Name = "btntambahkategori"
+        Me.btntambahkategori.Size = New System.Drawing.Size(34, 35)
+        Me.btntambahkategori.TabIndex = 36
+        Me.btntambahkategori.Text = "+"
+        Me.btntambahkategori.UseVisualStyleBackColor = False
+        '
         'FormTambahJenis
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -193,6 +219,8 @@ Partial Class FormTambahJenis
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1299, 609)
+        Me.Controls.Add(Me.btntambahkategori)
+        Me.Controls.Add(Me.btntambahmerek)
         Me.Controls.Add(Me.tbharga)
         Me.Controls.Add(Me.Harga)
         Me.Controls.Add(Me.bttutup)
@@ -228,4 +256,6 @@ Partial Class FormTambahJenis
     Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents Harga As System.Windows.Forms.Label
     Friend WithEvents tbharga As System.Windows.Forms.TextBox
+    Friend WithEvents btntambahmerek As System.Windows.Forms.Button
+    Friend WithEvents btntambahkategori As System.Windows.Forms.Button
 End Class

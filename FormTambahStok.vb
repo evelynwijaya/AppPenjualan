@@ -37,6 +37,7 @@ Public Class FormTambahStok
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         lbkodestok.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value()
+        tbjumlah.Focus()
     End Sub
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
@@ -125,4 +126,7 @@ Public Class FormTambahStok
         DateTimePicker1.Value = Now
         isigrid()
     End Sub
+
+   
+   
 End Class

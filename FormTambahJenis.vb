@@ -94,8 +94,12 @@ Public Class FormTambahJenis
 
 
     Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        autokode()
+        tbharga.Text = ""
+        tbnamabaju.Text = ""
+        ComboMerek.Text = ""
+        ComboKategori.Text = ""
 
-        FormTambahStok_Load(sender, e)
         Me.Hide()
         FormStok.Show()
     End Sub
@@ -107,7 +111,7 @@ Public Class FormTambahJenis
     End Sub
 
     Private Sub tbnamabaju_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamabaju.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
@@ -123,4 +127,40 @@ Public Class FormTambahJenis
 
         End If
     End Sub
+
+    Private Sub tbnamabaju_Leave(sender As Object, e As EventArgs) Handles tbnamabaju.Leave
+        tbharga.Focus()
+    End Sub
+
+    'Private Sub tbharga_Leave(sender As Object, e As EventArgs) Handles tbharga.Leave
+    '    ComboMerek.Focus()
+    'End Sub
+
+    'Private Sub ComboMerek_Leave(sender As Object, e As EventArgs) Handles ComboMerek.Leave
+    '    ComboKategori.Focus()
+    'End Sub
+
+    'Private Sub ComboKategori_Leave(sender As Object, e As EventArgs) Handles ComboKategori.Leave
+    '    tbsimpan.Focus()
+    'End Sub
+
+    'Private Sub tbsimpan_Leave(sender As Object, e As EventArgs) Handles tbsimpan.Leave
+    '    bttutup.Focus()
+    'End Sub
+
+    'Private Sub bttutup_Leave(sender As Object, e As EventArgs) Handles bttutup.Leave
+    '    tbnamabaju.Focus()
+    'End Sub
+
+    Private Sub btntambahmerek_Click(sender As Object, e As EventArgs) Handles btntambahmerek.Click
+        FormTambahDataMerek2.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btntambahkategori_Click(sender As Object, e As EventArgs) Handles btntambahkategori.Click
+        FormTambahKategori2.Show()
+        Me.Hide()
+    End Sub
+
+    
 End Class
