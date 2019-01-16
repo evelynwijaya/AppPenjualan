@@ -170,4 +170,12 @@ Public Class FormKategori
     Private Sub btupdate_Leave(sender As Object, e As EventArgs) Handles btupdate.Leave
         bthapus.Focus()
     End Sub
+
+    Private Sub tbsearch_Leave(sender As Object, e As EventArgs) Handles tbsearch.Leave
+        btncari.Focus()
+    End Sub
+
+    Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
+        btRefresh.Focus()
+    End Sub
 End Class

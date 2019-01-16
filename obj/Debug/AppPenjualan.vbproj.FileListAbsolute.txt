@@ -50,3 +50,5 @@ C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjual
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.DetailTransaksi.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormTambahDataMerek2.resources
 C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormTambahKategori2.resources
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormTambahDataMerek3.resources
+C:\Users\Lenovo\Documents\Visual Studio 2013\Projects\51015006-Evelyn\AppPenjualan\AppPenjualan\obj\Debug\AppPenjualan.FormTambahKategori3.resources

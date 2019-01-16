@@ -195,4 +195,12 @@ Public Class DetailTransaksi
             MsgBox("Tidak Ada Transaksi!", vbInformation, "Information")
         End If
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        DataGridView1.DataSource = ""
+        DataGridView2.DataSource = ""
+        lbidtransaksi.Text = ""
+        ComboBulan.Text = ""
+        ComboTahun.Text = ""
+    End Sub
 End Class

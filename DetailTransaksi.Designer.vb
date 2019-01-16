@@ -36,6 +36,7 @@ Partial Class DetailTransaksi
         Me.Label3 = New System.Windows.Forms.Label()
         Me.lbidtransaksi = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -188,12 +189,25 @@ Partial Class DetailTransaksi
         Me.Label4.TabIndex = 25
         Me.Label4.Text = "Hint : Untuk Memilih Data, Double Click pada data yang akan di pilih"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Coral
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Location = New System.Drawing.Point(1139, 29)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(114, 37)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Refresh"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'DetailTransaksi
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1362, 660)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.lbidtransaksi)
         Me.Controls.Add(Me.Label3)
@@ -228,4 +242,5 @@ Partial Class DetailTransaksi
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents lbidtransaksi As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

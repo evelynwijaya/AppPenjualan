@@ -23,25 +23,14 @@ Partial Class FormTambahKategori2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormTambahKategori2))
-        Me.bttutup = New System.Windows.Forms.Button()
         Me.tbsimpan = New System.Windows.Forms.Button()
         Me.tbnamakategori = New System.Windows.Forms.TextBox()
         Me.tbkodekategori = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.kop = New System.Windows.Forms.Label()
+        Me.bttutup = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'bttutup
-        '
-        Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bttutup.Location = New System.Drawing.Point(810, 385)
-        Me.bttutup.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.bttutup.Name = "bttutup"
-        Me.bttutup.Size = New System.Drawing.Size(161, 54)
-        Me.bttutup.TabIndex = 32
-        Me.bttutup.Text = "TUTUP"
-        Me.bttutup.UseVisualStyleBackColor = True
         '
         'tbsimpan
         '
@@ -109,6 +98,17 @@ Partial Class FormTambahKategori2
         Me.kop.TabIndex = 26
         Me.kop.Text = "Tambah Kategori"
         '
+        'bttutup
+        '
+        Me.bttutup.Font = New System.Drawing.Font("Microsoft NeoGothic", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bttutup.Location = New System.Drawing.Point(810, 385)
+        Me.bttutup.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.bttutup.Name = "bttutup"
+        Me.bttutup.Size = New System.Drawing.Size(161, 54)
+        Me.bttutup.TabIndex = 32
+        Me.bttutup.Text = "TUTUP"
+        Me.bttutup.UseVisualStyleBackColor = True
+        '
         'FormTambahKategori2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -130,11 +130,11 @@ Partial Class FormTambahKategori2
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents bttutup As System.Windows.Forms.Button
     Friend WithEvents tbsimpan As System.Windows.Forms.Button
     Friend WithEvents tbnamakategori As System.Windows.Forms.TextBox
     Friend WithEvents tbkodekategori As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents kop As System.Windows.Forms.Label
+    Friend WithEvents bttutup As System.Windows.Forms.Button
 End Class

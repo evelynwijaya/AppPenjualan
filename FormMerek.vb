@@ -167,4 +167,12 @@ Public Class FormMerek
             e.Handled = True
         End If
     End Sub
+
+    Private Sub tbcari_Leave(sender As Object, e As EventArgs) Handles tbcari.Leave
+        btncari.Focus()
+    End Sub
+
+    Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
+        btRefresh.Focus()
+    End Sub
 End Class

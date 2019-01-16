@@ -185,6 +185,7 @@ Partial Class FormTambahJenis
         '
         Me.tbharga.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbharga.Location = New System.Drawing.Point(537, 256)
+        Me.tbharga.MaxLength = 8
         Me.tbharga.Name = "tbharga"
         Me.tbharga.Size = New System.Drawing.Size(499, 26)
         Me.tbharga.TabIndex = 34

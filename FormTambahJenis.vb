@@ -128,9 +128,7 @@ Public Class FormTambahJenis
         End If
     End Sub
 
-    Private Sub tbnamabaju_Leave(sender As Object, e As EventArgs) Handles tbnamabaju.Leave
-        tbharga.Focus()
-    End Sub
+   
 
     'Private Sub tbharga_Leave(sender As Object, e As EventArgs) Handles tbharga.Leave
     '    ComboMerek.Focus()
@@ -163,4 +161,14 @@ Public Class FormTambahJenis
     End Sub
 
     
+    Private Sub tbharga_TextChanged(sender As Object, e As EventArgs) Handles tbharga.TextChanged
+        If tbharga.Text = "" Or Not IsNumeric(tbharga.Text) Then
+            Exit Sub
+        End If
+        Dim hrga As Integer = tbharga.Text
+        tbharga.Text = Format(hrga, "#,###")
+        tbharga.SelectionStart = Len(tbharga.Text) 'supaya angkanya berurut dari kiri ke kanan
+    End Sub
+
+   
 End Class

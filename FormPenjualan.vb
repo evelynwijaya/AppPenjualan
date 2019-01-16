@@ -241,7 +241,8 @@ Public Class FormPEnjualan
         Dim dialog As DialogResult
         dialog = MessageBox.Show("Do You really want to close this application?", "Exit", MessageBoxButtons.YesNo)
         If dialog = Windows.Forms.DialogResult.No Then
-
+            e.Cancel = True
+        Else
             Dim kodebaju As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(1).Value()
             Dim idtransaksi As String = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(0).Value()
 
@@ -256,9 +257,8 @@ Public Class FormPEnjualan
             Next
             Dim strhapus As String = "Delete from tb_sementara"
             Call hapusdata(strhapus)
-
-            e.Cancel = True
-        Else
+            isigridsementara()
+            tbtotal.Text = ""
             Application.ExitThread()
 
         End If
@@ -358,7 +358,16 @@ Public Class FormPEnjualan
         btnext.Focus()
     End Sub
 
-    Private Sub btnext_Leave(sender As Object, e As EventArgs) Handles btnext.Leave
 
+
+    Private Sub tbjumlah_TextChanged(sender As Object, e As EventArgs) Handles tbjumlah.TextChanged
+        If tbjumlah.Text = "" Or Not IsNumeric(tbjumlah.Text) Then
+            Exit Sub
+        End If
+        Dim hrga As Integer = tbjumlah.Text
+        tbjumlah.Text = Format(hrga, "#,###")
+        tbjumlah.SelectionStart = Len(tbjumlah.Text) 'supaya angkanya berurut dari kiri ke kanan
     End Sub
+
+    
 End Class

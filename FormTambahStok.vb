@@ -42,14 +42,14 @@ Public Class FormTambahStok
 
     Private Sub btupdate_Click(sender As Object, e As EventArgs) Handles btupdate.Click
       
-        If tbjumlah.Text = "" Then
+        If tbjumlah.Text = "" Or tbharga.Text = "" Then
             MsgBox("Mohon Lengkapi Data!", vbInformation, "Information!")
         Else
             Dim sisa_stok As Integer = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
             Dim stok_masuk As Integer = tbjumlah.Text
             Dim stok As Integer = sisa_stok + stok_masuk
 
-            Dim strsimpan As String = "UPDATE tb_stok set stok ='" & stok & "', tgl_masuk = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE kode_baju = '" & lbkodestok.Text & "'"
+            Dim strsimpan As String = "UPDATE tb_stok set stok ='" & stok & "', harga = '" & tbharga.Text & "', tgl_masuk = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE kode_baju = '" & lbkodestok.Text & "'"
             Call editdata(strsimpan)
             MsgBox("Data Tersimpan!", vbInformation, "Information")
         End If
@@ -64,8 +64,8 @@ Public Class FormTambahStok
         FormStok.Show()
     End Sub
 
-    Sub cari(ByVal str As String)
-        Dim strtampil As String = "select kode_baju , nama_baju , harga , stok from tb_stok"
+    Sub Cari(ByVal str As String)
+        Dim strtampil As String = str
         Dim strtabel As String = "tb_stok"
         Call tampildata(strtampil, strtabel)
         DataGridView1.DataSource = (ds.Tables("tb_stok"))
@@ -73,29 +73,7 @@ Public Class FormTambahStok
     End Sub
 
 
-    Sub seleksi()
-        Call KonekDB()
-        cmd = New Odbc.OdbcCommand
-        cmd.CommandType = CommandType.Text
-        cmd.Connection = conn
-        str = "Select kode_baju , nama_baju , harga , stok from tb_stok where nama_baju like '%" & tbserach.Text & "%'"
-        cmd.CommandText = str
-        dr = cmd.ExecuteReader()
-        If dr.HasRows Then
-            Cari(str)
-        Else
-            Cari(str)
-            MsgBox("Stok Tidak Ditemukan!", vbInformation, "Information")
-            tbserach.Text = ""
-            isigrid()
-            tbserach.Focus()
-        End If
-    End Sub
-
-    Private Sub tbserach_TextChanged(sender As Object, e As EventArgs) Handles tbserach.TextChanged
-        seleksi()
-    End Sub
-
+  
     Private Sub tbjumlah_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbjumlah.KeyPress
         If Not ((e.KeyChar >= "0" And e.KeyChar <= "9") Or e.KeyChar = vbBack) Then
             e.Handled = True
@@ -127,6 +105,42 @@ Public Class FormTambahStok
         isigrid()
     End Sub
 
-   
-   
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles tbharga.TextChanged
+        If tbharga.Text = "" Or Not IsNumeric(tbharga.Text) Then
+            Exit Sub
+        End If
+        Dim hrga As Integer = tbharga.Text
+        tbharga.Text = Format(hrga, "#,###")
+        tbharga.SelectionStart = Len(tbharga.Text) 'supaya angkanya berurut dari kiri ke kanan
+    End Sub
+
+    
+    Private Sub btncari_Click(sender As Object, e As EventArgs) Handles btncari.Click
+        Call KonekDB()
+        cmd = New Odbc.OdbcCommand
+        cmd.CommandType = CommandType.Text
+        cmd.Connection = conn
+        str = "Select * from tb_stok where nama_baju like '%" & tbserach.Text & "%' or kode_baju like '%" & tbserach.Text & "%'"
+
+        cmd.CommandText = str
+        dr = cmd.ExecuteReader()
+        If dr.HasRows Then
+            Cari(str)
+        Else
+            Cari(str)
+            MsgBox("Maaf, data tidak ditemukan!", vbInformation, "Pesan")
+            tbserach.Text = ""
+
+
+        End If
+    End Sub
+
+    Private Sub tbserach_Leave(sender As Object, e As EventArgs) Handles tbserach.Leave
+        btncari.Focus()
+    End Sub
+
+    Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
+        btrefresh.Focus()
+    End Sub
 End Class

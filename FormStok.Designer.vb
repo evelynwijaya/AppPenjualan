@@ -23,6 +23,8 @@ Partial Class FormStok
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btntambahkategori = New System.Windows.Forms.Button()
+        Me.btntambahmerek = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.bthapus = New System.Windows.Forms.Button()
         Me.ComboKategori = New System.Windows.Forms.ComboBox()
@@ -52,6 +54,8 @@ Partial Class FormStok
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.btntambahkategori)
+        Me.GroupBox1.Controls.Add(Me.btntambahmerek)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.bthapus)
         Me.GroupBox1.Controls.Add(Me.ComboKategori)
@@ -70,6 +74,30 @@ Partial Class FormStok
         Me.GroupBox1.Size = New System.Drawing.Size(549, 413)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'btntambahkategori
+        '
+        Me.btntambahkategori.BackColor = System.Drawing.Color.Chocolate
+        Me.btntambahkategori.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntambahkategori.ForeColor = System.Drawing.Color.Black
+        Me.btntambahkategori.Location = New System.Drawing.Point(500, 243)
+        Me.btntambahkategori.Name = "btntambahkategori"
+        Me.btntambahkategori.Size = New System.Drawing.Size(34, 35)
+        Me.btntambahkategori.TabIndex = 37
+        Me.btntambahkategori.Text = "+"
+        Me.btntambahkategori.UseVisualStyleBackColor = False
+        '
+        'btntambahmerek
+        '
+        Me.btntambahmerek.BackColor = System.Drawing.Color.Chocolate
+        Me.btntambahmerek.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btntambahmerek.ForeColor = System.Drawing.Color.Black
+        Me.btntambahmerek.Location = New System.Drawing.Point(500, 140)
+        Me.btntambahmerek.Name = "btntambahmerek"
+        Me.btntambahmerek.Size = New System.Drawing.Size(34, 35)
+        Me.btntambahmerek.TabIndex = 36
+        Me.btntambahmerek.Text = "+"
+        Me.btntambahmerek.UseVisualStyleBackColor = False
         '
         'Label8
         '
@@ -101,7 +129,7 @@ Partial Class FormStok
         Me.ComboKategori.FormattingEnabled = True
         Me.ComboKategori.Location = New System.Drawing.Point(167, 246)
         Me.ComboKategori.Name = "ComboKategori"
-        Me.ComboKategori.Size = New System.Drawing.Size(370, 32)
+        Me.ComboKategori.Size = New System.Drawing.Size(327, 32)
         Me.ComboKategori.TabIndex = 16
         '
         'ComboMerek
@@ -111,13 +139,14 @@ Partial Class FormStok
         Me.ComboMerek.FormattingEnabled = True
         Me.ComboMerek.Location = New System.Drawing.Point(167, 143)
         Me.ComboMerek.Name = "ComboMerek"
-        Me.ComboMerek.Size = New System.Drawing.Size(370, 32)
+        Me.ComboMerek.Size = New System.Drawing.Size(327, 32)
         Me.ComboMerek.TabIndex = 15
         '
         'tbharga
         '
         Me.tbharga.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbharga.Location = New System.Drawing.Point(167, 196)
+        Me.tbharga.MaxLength = 8
         Me.tbharga.Name = "tbharga"
         Me.tbharga.Size = New System.Drawing.Size(370, 29)
         Me.tbharga.TabIndex = 14
@@ -351,4 +380,6 @@ Partial Class FormStok
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btncari As System.Windows.Forms.Button
+    Friend WithEvents btntambahkategori As System.Windows.Forms.Button
+    Friend WithEvents btntambahmerek As System.Windows.Forms.Button
 End Class

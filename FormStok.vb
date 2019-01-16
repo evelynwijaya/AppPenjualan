@@ -1,16 +1,15 @@
 ﻿Imports System.Data.Odbc
 Public Class FormStok
     Public Sub FormStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        isigrid()
+        isikategosi()
+        isimerek()
         lbkodestok.Text = ""
         tbnamabaju.Text = ""
         ComboMerek.Text = ""
         tbharga.Text = ""
         ComboKategori.Text = ""
         tbserach.Text = ""
-
-        isigrid()
-        isikategosi()
-        isimerek()
     End Sub
 
     Sub isigrid()
@@ -227,5 +226,23 @@ Public Class FormStok
 
     Private Sub btupdate_Leave(sender As Object, e As EventArgs) Handles btupdate.Leave
         bthapus.Focus()
+    End Sub
+
+    Private Sub btntambahmerek_Click(sender As Object, e As EventArgs) Handles btntambahmerek.Click
+        FormTambahDataMerek3.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub btntambahkategori_Click(sender As Object, e As EventArgs) Handles btntambahkategori.Click
+        FormTambahKategori3.Show()
+        Me.Hide()
+    End Sub
+
+    Private Sub tbserach_Leave(sender As Object, e As EventArgs) Handles tbserach.Leave
+        btncari.Focus()
+    End Sub
+
+    Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
+        btrefresh.Focus()
     End Sub
 End Class

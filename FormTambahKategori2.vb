@@ -46,16 +46,13 @@
                 autokode()
                 tbnamakategori.Text = ""
                 FormTambahJenis.isikategosi()
-
+                FormStok.isikategosi()
+                Me.Hide()
             End If
         End If
     End Sub
 
-    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        'FormTambahKategori2_Load(sender, e)
-        Me.Hide()
-        FormTambahJenis.Show()
-    End Sub
+   
 
     Private Sub FormTambahKategori2_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         Dim dialog As DialogResult
@@ -72,5 +69,10 @@
         If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        Me.Hide()
+        FormTambahJenis.Show()
     End Sub
 End Class

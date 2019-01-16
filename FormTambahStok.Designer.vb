@@ -23,6 +23,8 @@ Partial Class FormTambahStok
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.tbharga = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.tbjumlah = New System.Windows.Forms.TextBox()
@@ -37,6 +39,7 @@ Partial Class FormTambahStok
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btncari = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -44,6 +47,8 @@ Partial Class FormTambahStok
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.GroupBox1.Controls.Add(Me.tbharga)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
         Me.GroupBox1.Controls.Add(Me.tbjumlah)
@@ -57,6 +62,26 @@ Partial Class FormTambahStok
         Me.GroupBox1.Size = New System.Drawing.Size(590, 441)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
+        '
+        'tbharga
+        '
+        Me.tbharga.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbharga.Location = New System.Drawing.Point(171, 269)
+        Me.tbharga.MaxLength = 8
+        Me.tbharga.Name = "tbharga"
+        Me.tbharga.Size = New System.Drawing.Size(400, 29)
+        Me.tbharga.TabIndex = 19
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft NeoGothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Sienna
+        Me.Label7.Location = New System.Drawing.Point(25, 269)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(64, 26)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Harga"
         '
         'Label6
         '
@@ -89,7 +114,7 @@ Partial Class FormTambahStok
         '
         Me.btupdate.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btupdate.ForeColor = System.Drawing.Color.Chocolate
-        Me.btupdate.Location = New System.Drawing.Point(172, 282)
+        Me.btupdate.Location = New System.Drawing.Point(172, 327)
         Me.btupdate.Name = "btupdate"
         Me.btupdate.Size = New System.Drawing.Size(148, 41)
         Me.btupdate.TabIndex = 10
@@ -153,16 +178,16 @@ Partial Class FormTambahStok
         '
         'tbserach
         '
-        Me.tbserach.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbserach.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbserach.Location = New System.Drawing.Point(106, 76)
         Me.tbserach.Name = "tbserach"
-        Me.tbserach.Size = New System.Drawing.Size(1244, 26)
+        Me.tbserach.Size = New System.Drawing.Size(1107, 29)
         Me.tbserach.TabIndex = 7
         '
         'btrefresh
         '
         Me.btrefresh.ForeColor = System.Drawing.Color.Chocolate
-        Me.btrefresh.Location = New System.Drawing.Point(1219, 25)
+        Me.btrefresh.Location = New System.Drawing.Point(1219, 16)
         Me.btrefresh.Name = "btrefresh"
         Me.btrefresh.Size = New System.Drawing.Size(131, 45)
         Me.btrefresh.TabIndex = 8
@@ -200,12 +225,23 @@ Partial Class FormTambahStok
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Data Masuk"
         '
+        'btncari
+        '
+        Me.btncari.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btncari.Location = New System.Drawing.Point(1219, 72)
+        Me.btncari.Name = "btncari"
+        Me.btncari.Size = New System.Drawing.Size(131, 35)
+        Me.btncari.TabIndex = 17
+        Me.btncari.Text = "Cari"
+        Me.btncari.UseVisualStyleBackColor = True
+        '
         'FormTambahStok
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1362, 623)
+        Me.Controls.Add(Me.btncari)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label5)
@@ -239,4 +275,7 @@ Partial Class FormTambahStok
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents tbharga As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btncari As System.Windows.Forms.Button
 End Class

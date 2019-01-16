@@ -46,15 +46,12 @@
                 tbnamamerek.Focus()
                 FormTambahJenis.isimerek()
 
+
             End If
         End If
     End Sub
 
-    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
-        ' FormTambahDataMerek_Load(sender, e)
-        Me.Hide()
-        FormTambahJenis.Show()
-    End Sub
+   
 
     Private Sub tbnamamerek_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbnamamerek.KeyPress
         If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9") Or Char.IsWhiteSpace(e.KeyChar)) Then
@@ -73,4 +70,8 @@
         End If
     End Sub
 
+    Private Sub bttutup_Click(sender As Object, e As EventArgs) Handles bttutup.Click
+        Me.Hide()
+        FormTambahJenis.Show()
+    End Sub
 End Class

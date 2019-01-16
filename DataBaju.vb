@@ -92,4 +92,7 @@ Public Class DataBaju
         End If
     End Sub
 
+    Private Sub tbsearch_Leave(sender As Object, e As EventArgs) Handles tbsearch.Leave
+        tbcari.Focus()
+    End Sub
 End Class
