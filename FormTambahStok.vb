@@ -7,6 +7,8 @@ Public Class FormTambahStok
         tbserach.Text = ""
         tbjumlah.Text = ""
         DateTimePicker1.Value = Now
+        'DateTimePicker1.MinDate = Format(Now)
+        'DateTimePicker1.MaxDate = Format(Now.AddDays(3))
     End Sub
 
     Sub isigrid()
@@ -37,6 +39,7 @@ Public Class FormTambahStok
 
     Private Sub DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellDoubleClick
         lbkodestok.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(0).Value()
+        tbharga.Text = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(2).Value()
         tbjumlah.Focus()
     End Sub
 
@@ -45,17 +48,21 @@ Public Class FormTambahStok
         If tbjumlah.Text = "" Or tbharga.Text = "" Then
             MsgBox("Mohon Lengkapi Data!", vbInformation, "Information!")
         Else
+            Dim harga As Double = tbharga.Text
             Dim sisa_stok As Integer = DataGridView1.Rows.Item(DataGridView1.CurrentRow.Index).Cells(3).Value()
             Dim stok_masuk As Integer = tbjumlah.Text
             Dim stok As Integer = sisa_stok + stok_masuk
 
-            Dim strsimpan As String = "UPDATE tb_stok set stok ='" & stok & "', harga = '" & tbharga.Text & "', tgl_masuk = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE kode_baju = '" & lbkodestok.Text & "'"
+            Dim strsimpan As String = "UPDATE tb_stok set stok ='" & stok & "', harga = '" & harga & "', tgl_masuk = '" & Format(DateTimePicker1.Value, "yyyy-MM-dd") & "' WHERE kode_baju = '" & lbkodestok.Text & "'"
             Call editdata(strsimpan)
             MsgBox("Data Tersimpan!", vbInformation, "Information")
         End If
         FormStok.isigrid()
         isigrid()
         tbjumlah.Text = ""
+        tbharga.Text = ""
+        lbkodestok.Text = ""
+        DateTimePicker1.Value = Now
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -101,6 +108,7 @@ Public Class FormTambahStok
         lbkodestok.Text = ""
         tbserach.Text = ""
         tbjumlah.Text = ""
+        tbharga.Text = ""
         DateTimePicker1.Value = Now
         isigrid()
     End Sub
@@ -142,5 +150,20 @@ Public Class FormTambahStok
 
     Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
         btrefresh.Focus()
+    End Sub
+
+    'Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
+    '    If DateDiff(DateInterval.Day, DateTimePicker1.Value, Today()) > 3 Then
+    '        MsgBox("Tidak dapat menginput transaksi lewat dari 3 hari", vbInformation, "Information")
+    '    End If
+    'End Sub
+
+    Private Sub tbjumlah_TextChanged(sender As Object, e As EventArgs) Handles tbjumlah.TextChanged
+        If tbjumlah.Text = "" Or Not IsNumeric(tbjumlah.Text) Then
+            Exit Sub
+        End If
+        Dim jumlah As Integer = tbjumlah.Text
+        tbjumlah.Text = Format(jumlah, "#,###")
+        tbjumlah.SelectionStart = Len(tbjumlah.Text)
     End Sub
 End Class

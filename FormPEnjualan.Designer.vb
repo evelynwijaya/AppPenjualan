@@ -185,6 +185,7 @@ Partial Class FormPEnjualan
         '
         Me.tbjumlah.Font = New System.Drawing.Font("Modern No. 20", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tbjumlah.Location = New System.Drawing.Point(832, 108)
+        Me.tbjumlah.MaxLength = 5
         Me.tbjumlah.Name = "tbjumlah"
         Me.tbjumlah.Size = New System.Drawing.Size(117, 28)
         Me.tbjumlah.TabIndex = 11

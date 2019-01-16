@@ -76,8 +76,9 @@ Public Class FormTambahJenis
                 ComboKategori.Text = ""
                 ComboMerek.Text = ""
             Else
+                Dim harga As Double = tbharga.Text
                 Dim strsimpan As String = "Insert Into tb_stok ( kode_baju , nama_baju , nama_merek , kategori , harga )" _
-                                     & "Value ('" & tbkodebaju.Text & "','" & tbnamabaju.Text & "','" & ComboMerek.Text & "','" & ComboKategori.Text & "','" & tbharga.Text & "')"
+                                     & "Value ('" & tbkodebaju.Text & "','" & tbnamabaju.Text & "','" & ComboMerek.Text & "','" & ComboKategori.Text & "','" & harga & "')"
                 Call simpandata(strsimpan)
                 MsgBox("Data Tersimpan !", vbInformation, "Information")
 

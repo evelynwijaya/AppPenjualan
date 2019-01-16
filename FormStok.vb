@@ -74,8 +74,8 @@ Public Class FormStok
                 MsgBox("Nama Baju sudah ada, silahkan menginput data baru!", vbInformation, "Information")
                 tbnamabaju.Text = ""
             Else
-
-                Dim strupdate As String = "Update tb_stok set nama_baju = '" & tbnamabaju.Text & "', nama_merek = '" & ComboMerek.Text & "', harga = '" & tbharga.Text & "', kategori = '" & ComboKategori.Text & "' Where kode_baju = '" & lbkodestok.Text & "'"
+                Dim harga As Double = tbharga.Text
+                Dim strupdate As String = "Update tb_stok set nama_baju = '" & tbnamabaju.Text & "', nama_merek = '" & ComboMerek.Text & "', harga = '" & harga & "', kategori = '" & ComboKategori.Text & "' Where kode_baju = '" & lbkodestok.Text & "'"
                 Call editdata(strupdate)
                 MsgBox("Data Terupdate!", vbInformation, "Information")
 
@@ -140,13 +140,13 @@ Public Class FormStok
    
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        'FormTambahJenis.FormTambahStok_Load(sender, e)
+        FormTambahJenis.FormTambahStok_Load(sender, e)
         FormTambahJenis.Show()
         Me.Hide()
     End Sub
 
     Private Sub btnRestock_Click(sender As Object, e As EventArgs) Handles btnRestock.Click
-        'FormTambahStok.FormTambahStok_Load(sender, e)
+        FormTambahStok.FormTambahStok_Load(sender, e)
         FormTambahStok.Show()
         Me.Hide()
 
@@ -244,5 +244,15 @@ Public Class FormStok
 
     Private Sub btncari_Leave(sender As Object, e As EventArgs) Handles btncari.Leave
         btrefresh.Focus()
+    End Sub
+
+  
+    Private Sub tbharga_TextChanged(sender As Object, e As EventArgs) Handles tbharga.TextChanged
+        If tbharga.Text = "" Or Not IsNumeric(tbharga.Text) Then
+            Exit Sub
+        End If
+        Dim hrga As Integer = tbharga.Text
+        tbharga.Text = Format(hrga, "#,###")
+        tbharga.SelectionStart = Len(tbharga.Text) 'supaya angkanya berurut dari kiri ke kanan
     End Sub
 End Class

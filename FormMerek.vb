@@ -113,7 +113,7 @@ Public Class FormMerek
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        ' FormTambahDataMerek.FormTambahDataMerek_Load(sender, e)
+        FormTambahDataMerek.FormTambahDataMerek_Load(sender, e)
         FormTambahDataMerek.Show()
         Me.Hide()
     End Sub

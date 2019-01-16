@@ -108,7 +108,7 @@ Public Class Laporan
     End Sub
 
     Private Sub ComboLaporan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboLaporan.SelectedIndexChanged
-        'If ComboLaporan.SelectedIndex = 0 Then
+        'If ComboLaporan.SelectedIndex = 0 Or ComboLaporan.SelectedIndex = 1 Then
         '    DAwal.Enabled = False
         '    DAkhir.Enabled = False
         'Else

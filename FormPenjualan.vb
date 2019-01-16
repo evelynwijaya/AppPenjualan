@@ -278,12 +278,13 @@ Public Class FormPEnjualan
             cmd.CommandText = str
             dr = cmd.ExecuteReader()
             If dr.HasRows Then
-                Dim Bawal As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value()
+                Dim Bawal As Integer = DataGridView2.Rows.Item(DataGridView2.CurrentRow.Index).Cells(3).Value() 'jumlah awal di datagrid sementara
                 Dim SAwal As Integer = lbstokawal.Text
-                Dim JAwal As Integer = tbjumlah.Text
+                Dim JAwal As Double = tbjumlah.Text
                 Dim Stok As Integer
+
                 Stok = SAwal - JAwal
-                Dim tambah As Integer = tbjumlah.Text + Bawal
+                Dim tambah As Integer = JAwal + Bawal
                 Dim subtotal As Integer = tambah * lbharga.Text
 
                 If JAwal > SAwal Then
@@ -322,9 +323,9 @@ Public Class FormPEnjualan
                     MsgBox("Stok tidak mencukupi!", vbInformation, "Information")
                 Else
                     Stok = SAwal - JAwal
-                    Dim subtotal As Integer = tbjumlah.Text * lbharga.Text
+                    Dim subtotal As Integer = JAwal * lbharga.Text
                     Dim strsimpan As String = "Insert into tb_sementara ( id_transaksi , kode_baju , nama_baju , jumlah , harga , subtotal , stokawal ) " _
-                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & tbjumlah.Text & "', '" & lbharga.Text & "', '" & subtotal & "', '" & Stok & "')"
+                                              & "Value ('" & lbidtransaksi.Text & "', '" & lbkodebaju.Text & "', '" & lbnamabaju.Text & "', '" & JAwal & "', '" & lbharga.Text & "', '" & subtotal & "', '" & Stok & "')"
                     Call simpandata(strsimpan)
 
                     Dim strupdate2 As String = "Update tb_stok set stok = '" & Stok & "' where kode_baju = '" & lbkodebaju.Text & "'"

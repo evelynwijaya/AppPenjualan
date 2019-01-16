@@ -119,14 +119,14 @@ Partial Class Form1
         '
         Me.TransaksiPenjualanToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.TransaksiPenjualanToolStripMenuItem.Name = "TransaksiPenjualanToolStripMenuItem"
-        Me.TransaksiPenjualanToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
-        Me.TransaksiPenjualanToolStripMenuItem.Text = "Rekap Transaksi Penjualan"
+        Me.TransaksiPenjualanToolStripMenuItem.Size = New System.Drawing.Size(320, 34)
+        Me.TransaksiPenjualanToolStripMenuItem.Text = "Input Transaksi Penjualan"
         '
         'DetailTransaksiToolStripMenuItem
         '
         Me.DetailTransaksiToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.DetailTransaksiToolStripMenuItem.Name = "DetailTransaksiToolStripMenuItem"
-        Me.DetailTransaksiToolStripMenuItem.Size = New System.Drawing.Size(327, 34)
+        Me.DetailTransaksiToolStripMenuItem.Size = New System.Drawing.Size(320, 34)
         Me.DetailTransaksiToolStripMenuItem.Text = "Detail Transaksi"
         '
         'LaporanToolStripMenuItem

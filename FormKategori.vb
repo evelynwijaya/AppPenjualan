@@ -115,13 +115,13 @@ Public Class FormKategori
     End Sub
 
     Private Sub btnTambah_Click(sender As Object, e As EventArgs) Handles btnTambah.Click
-        ' FormTambahKategori.FormTambahKategori_Load(sender, e)
+        FormTambahKategori.FormTambahKategori_Load(sender, e)
         FormTambahKategori.Show()
         Me.Hide()
     End Sub
 
     Private Sub tbsearch_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbsearch.KeyPress
-        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9")) Then
+        If Not ((e.KeyChar Like "[A-Z,a-z]") Or e.KeyChar = vbBack Or (e.KeyChar >= "0" And e.KeyChar <= "9") Or Char.IsWhiteSpace(e.KeyChar)) Then
             e.Handled = True
         End If
     End Sub
